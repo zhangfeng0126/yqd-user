@@ -1,0 +1,1230 @@
+2019-05-09 17:29:29,575 [16] ERROR logger - Input string was not in a correct format.
+
+2019-05-09 17:30:51,883 [15] ERROR logger - Input string was not in a correct format.
+
+2019-05-09 17:35:21,115 [15] ERROR logger - Input string was not in a correct format.
+
+2019-05-09 17:36:47,844 [16] ERROR logger - Input string was not in a correct format.
+
+2019-05-09 17:37:48,003 [16] DEBUG logger - Executed DbCommand (92ms) [Parameters=[@__request_SchoolId_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SELECT `s`.`grade_id`
+FROM `user` AS `q`
+INNER JOIN `user_and_student` AS `us` ON `q`.`Id` = `us`.`user_id`
+INNER JOIN `student` AS `s` ON `us`.`student_id` = `s`.`id`
+INNER JOIN `user_and_role` AS `ur` ON `q`.`Id` = `ur`.`user_id`
+WHERE ((`q`.`status` <> -1) AND (`q`.`school_id` = @__request_SchoolId_0)) AND (`ur`.`role_id` = 4)
+
+2019-05-09 17:37:50,024 [16] DEBUG logger - Executed DbCommand (2ms) [Parameters=[@__request_SchoolId_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SELECT `s`.`class_id`
+FROM `user` AS `q`
+INNER JOIN `user_and_student` AS `us` ON `q`.`Id` = `us`.`user_id`
+INNER JOIN `student` AS `s` ON `us`.`student_id` = `s`.`id`
+INNER JOIN `user_and_role` AS `ur` ON `q`.`Id` = `ur`.`user_id`
+WHERE ((`q`.`status` <> -1) AND (`q`.`school_id` = @__request_SchoolId_0)) AND (`ur`.`role_id` = 4)
+
+2019-05-09 17:38:05,698 [16] DEBUG logger - Executed DbCommand (2ms) [Parameters=[@__request_SchoolId_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SELECT `s`.`student_no` AS `StudentNo`, `q`.`user_name` AS `UserName`, CASE
+    WHEN `q`.`gender` = 0
+    THEN '女' ELSE '男'
+END AS `Gender`, `s`.`grade_id`, `s`.`class_id`
+FROM `user` AS `q`
+INNER JOIN `user_and_student` AS `us` ON `q`.`Id` = `us`.`user_id`
+INNER JOIN `student` AS `s` ON `us`.`student_id` = `s`.`id`
+INNER JOIN `user_and_role` AS `ur` ON `q`.`Id` = `ur`.`user_id`
+WHERE ((`q`.`status` <> -1) AND (`q`.`school_id` = @__request_SchoolId_0)) AND (`ur`.`role_id` = 4)
+
+2019-05-09 18:09:08,559 [16] DEBUG logger - Executed DbCommand (68ms) [Parameters=[@__request_LoginName_0='?' (Size = 4000), @__request_LoginPwd_1='?' (Size = 4000)], CommandType='Text', CommandTimeout='30']
+SELECT `q`.`Id`, `q`.`add_time`, `q`.`avatar`, `q`.`client_id`, `q`.`gender`, `q`.`login_name`, `q`.`login_password`, `q`.`phone`, `q`.`school_id`, `q`.`status`, `q`.`update_time`, `q`.`user_name`
+FROM `user` AS `q`
+WHERE ((`q`.`login_name` = @__request_LoginName_0) AND (`q`.`login_password` = @__request_LoginPwd_1)) AND (`q`.`status` <> -1)
+LIMIT 1
+
+2019-05-09 18:28:42,333 [15] DEBUG logger - Executed DbCommand (72ms) [Parameters=[@__request_SchoolId_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SELECT `s`.`grade_id`
+FROM `user` AS `q`
+INNER JOIN `user_and_student` AS `us` ON `q`.`Id` = `us`.`user_id`
+INNER JOIN `student` AS `s` ON `us`.`student_id` = `s`.`id`
+INNER JOIN `user_and_role` AS `ur` ON `q`.`Id` = `ur`.`user_id`
+WHERE ((`q`.`status` <> -1) AND (`q`.`school_id` = @__request_SchoolId_0)) AND (`ur`.`role_id` = 4)
+
+2019-05-09 18:28:43,878 [15] DEBUG logger - Executed DbCommand (2ms) [Parameters=[@__request_SchoolId_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SELECT `s`.`class_id`
+FROM `user` AS `q`
+INNER JOIN `user_and_student` AS `us` ON `q`.`Id` = `us`.`user_id`
+INNER JOIN `student` AS `s` ON `us`.`student_id` = `s`.`id`
+INNER JOIN `user_and_role` AS `ur` ON `q`.`Id` = `ur`.`user_id`
+WHERE ((`q`.`status` <> -1) AND (`q`.`school_id` = @__request_SchoolId_0)) AND (`ur`.`role_id` = 4)
+
+2019-05-09 18:28:56,346 [15] DEBUG logger - Executed DbCommand (2ms) [Parameters=[@__request_SchoolId_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SELECT `s`.`student_no` AS `StudentNo`, `q`.`user_name` AS `UserName`, CASE
+    WHEN `q`.`gender` = 0
+    THEN '女' ELSE '男'
+END AS `Gender`, `s`.`grade_id`, `s`.`class_id`
+FROM `user` AS `q`
+INNER JOIN `user_and_student` AS `us` ON `q`.`Id` = `us`.`user_id`
+INNER JOIN `student` AS `s` ON `us`.`student_id` = `s`.`id`
+INNER JOIN `user_and_role` AS `ur` ON `q`.`Id` = `ur`.`user_id`
+WHERE ((`q`.`status` <> -1) AND (`q`.`school_id` = @__request_SchoolId_0)) AND (`ur`.`role_id` = 4)
+
+2019-05-10 15:07:45,496 [16] DEBUG logger - Executed DbCommand (62ms) [Parameters=[@__request_SchoolId_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SELECT `s`.`grade_id`
+FROM `user` AS `q`
+INNER JOIN `user_and_student` AS `us` ON `q`.`Id` = `us`.`user_id`
+INNER JOIN `student` AS `s` ON `us`.`student_id` = `s`.`id`
+INNER JOIN `user_and_role` AS `ur` ON `q`.`Id` = `ur`.`user_id`
+WHERE ((`q`.`status` <> -1) AND (`q`.`school_id` = @__request_SchoolId_0)) AND (`ur`.`role_id` = 4)
+
+2019-05-10 15:07:45,632 [16] DEBUG logger - Executed DbCommand (2ms) [Parameters=[@__request_SchoolId_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SELECT `s`.`class_id`
+FROM `user` AS `q`
+INNER JOIN `user_and_student` AS `us` ON `q`.`Id` = `us`.`user_id`
+INNER JOIN `student` AS `s` ON `us`.`student_id` = `s`.`id`
+INNER JOIN `user_and_role` AS `ur` ON `q`.`Id` = `ur`.`user_id`
+WHERE ((`q`.`status` <> -1) AND (`q`.`school_id` = @__request_SchoolId_0)) AND (`ur`.`role_id` = 4)
+
+2019-05-10 15:07:46,091 [16] DEBUG logger - Executed DbCommand (2ms) [Parameters=[@__request_SchoolId_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SELECT `s`.`student_no` AS `StudentNo`, `q`.`user_name` AS `UserName`, CASE
+    WHEN `q`.`gender` = 0
+    THEN '女' ELSE '男'
+END AS `Gender`, `s`.`grade_id`, `s`.`class_id`
+FROM `user` AS `q`
+INNER JOIN `user_and_student` AS `us` ON `q`.`Id` = `us`.`user_id`
+INNER JOIN `student` AS `s` ON `us`.`student_id` = `s`.`id`
+INNER JOIN `user_and_role` AS `ur` ON `q`.`Id` = `ur`.`user_id`
+WHERE ((`q`.`status` <> -1) AND (`q`.`school_id` = @__request_SchoolId_0)) AND (`ur`.`role_id` = 4)
+
+2019-05-10 16:56:27,100 [14] DEBUG logger - Executed DbCommand (63ms) [Parameters=[@__studentNo_0='?' (Size = 4000)], CommandType='Text', CommandTimeout='30']
+SELECT `s`.`Id`, `s`.`add_time`, `s`.`avatar`, `s`.`client_id`, `s`.`gender`, `s`.`login_name`, `s`.`login_password`, `s`.`phone`, `s`.`school_id`, `s`.`status`, `s`.`update_time`, `s`.`user_name`
+FROM `user` AS `s`
+WHERE (`s`.`status` <> -1) AND (`s`.`user_name` = @__studentNo_0)
+LIMIT 1
+
+2019-05-10 16:56:27,306 [14] DEBUG logger - Executed DbCommand (1ms) [Parameters=[@__studentNo_0='?' (Size = 4000)], CommandType='Text', CommandTimeout='30']
+SELECT `s`.`Id`, `s`.`add_time`, `s`.`avatar`, `s`.`client_id`, `s`.`gender`, `s`.`login_name`, `s`.`login_password`, `s`.`phone`, `s`.`school_id`, `s`.`status`, `s`.`update_time`, `s`.`user_name`
+FROM `user` AS `s`
+WHERE (`s`.`status` <> -1) AND (`s`.`user_name` = @__studentNo_0)
+LIMIT 1
+
+2019-05-10 17:18:24,653 [14] DEBUG logger - Executed DbCommand (60ms) [Parameters=[@__loginName_0='?' (Size = 4000)], CommandType='Text', CommandTimeout='30']
+SELECT `s`.`Id`, `s`.`add_time`, `s`.`avatar`, `s`.`client_id`, `s`.`gender`, `s`.`login_name`, `s`.`login_password`, `s`.`phone`, `s`.`school_id`, `s`.`status`, `s`.`update_time`, `s`.`user_name`
+FROM `user` AS `s`
+WHERE (`s`.`status` <> -1) AND (`s`.`user_name` = @__loginName_0)
+LIMIT 1
+
+2019-05-10 17:18:30,261 [14] DEBUG logger - Executed DbCommand (1ms) [Parameters=[@__subjectName_0='?' (Size = 4000)], CommandType='Text', CommandTimeout='30']
+SELECT `s`.`id`, `s`.`add_time`, `s`.`name`, `s`.`status`, `s`.`update_time`
+FROM `subject` AS `s`
+WHERE (`s`.`status` <> -1) AND (`s`.`name` = @__subjectName_0)
+LIMIT 1
+
+2019-05-10 17:19:24,902 [14] DEBUG logger - Executed DbCommand (10ms) [Parameters=[@__loginName_0='?' (Size = 4000)], CommandType='Text', CommandTimeout='30']
+SELECT `s`.`Id`, `s`.`add_time`, `s`.`avatar`, `s`.`client_id`, `s`.`gender`, `s`.`login_name`, `s`.`login_password`, `s`.`phone`, `s`.`school_id`, `s`.`status`, `s`.`update_time`, `s`.`user_name`
+FROM `user` AS `s`
+WHERE (`s`.`status` <> -1) AND (`s`.`user_name` = @__loginName_0)
+LIMIT 1
+
+2019-05-10 17:19:24,910 [14] DEBUG logger - Executed DbCommand (1ms) [Parameters=[@__subjectName_0='?' (Size = 4000)], CommandType='Text', CommandTimeout='30']
+SELECT `s`.`id`, `s`.`add_time`, `s`.`name`, `s`.`status`, `s`.`update_time`
+FROM `subject` AS `s`
+WHERE (`s`.`status` <> -1) AND (`s`.`name` = @__subjectName_0)
+LIMIT 1
+
+2019-05-10 17:21:14,031 [13] DEBUG logger - Executed DbCommand (61ms) [Parameters=[@__loginName_0='?' (Size = 4000)], CommandType='Text', CommandTimeout='30']
+SELECT `s`.`Id`, `s`.`add_time`, `s`.`avatar`, `s`.`client_id`, `s`.`gender`, `s`.`login_name`, `s`.`login_password`, `s`.`phone`, `s`.`school_id`, `s`.`status`, `s`.`update_time`, `s`.`user_name`
+FROM `user` AS `s`
+WHERE (`s`.`status` <> -1) AND (`s`.`user_name` = @__loginName_0)
+LIMIT 1
+
+2019-05-10 17:21:14,131 [13] DEBUG logger - Executed DbCommand (1ms) [Parameters=[@__subjectName_0='?' (Size = 4000)], CommandType='Text', CommandTimeout='30']
+SELECT `s`.`id`, `s`.`add_time`, `s`.`name`, `s`.`status`, `s`.`update_time`
+FROM `subject` AS `s`
+WHERE (`s`.`status` <> -1) AND (`s`.`name` = @__subjectName_0)
+LIMIT 1
+
+2019-05-10 17:21:18,867 [13] DEBUG logger - Executed DbCommand (2ms) [Parameters=[@__loginName_0='?' (Size = 4000)], CommandType='Text', CommandTimeout='30']
+SELECT `s`.`Id`, `s`.`add_time`, `s`.`avatar`, `s`.`client_id`, `s`.`gender`, `s`.`login_name`, `s`.`login_password`, `s`.`phone`, `s`.`school_id`, `s`.`status`, `s`.`update_time`, `s`.`user_name`
+FROM `user` AS `s`
+WHERE (`s`.`status` <> -1) AND (`s`.`user_name` = @__loginName_0)
+LIMIT 1
+
+2019-05-10 17:21:18,878 [13] DEBUG logger - Executed DbCommand (2ms) [Parameters=[@__subjectName_0='?' (Size = 4000)], CommandType='Text', CommandTimeout='30']
+SELECT `s`.`id`, `s`.`add_time`, `s`.`name`, `s`.`status`, `s`.`update_time`
+FROM `subject` AS `s`
+WHERE (`s`.`status` <> -1) AND (`s`.`name` = @__subjectName_0)
+LIMIT 1
+
+2019-05-10 17:21:52,594 [13] DEBUG logger - Executed DbCommand (65ms) [Parameters=[@__loginName_0='?' (Size = 4000)], CommandType='Text', CommandTimeout='30']
+SELECT `s`.`Id`, `s`.`add_time`, `s`.`avatar`, `s`.`client_id`, `s`.`gender`, `s`.`login_name`, `s`.`login_password`, `s`.`phone`, `s`.`school_id`, `s`.`status`, `s`.`update_time`, `s`.`user_name`
+FROM `user` AS `s`
+WHERE (`s`.`status` <> -1) AND (`s`.`user_name` = @__loginName_0)
+LIMIT 1
+
+2019-05-10 17:21:52,695 [13] DEBUG logger - Executed DbCommand (1ms) [Parameters=[@__subjectName_0='?' (Size = 4000)], CommandType='Text', CommandTimeout='30']
+SELECT `s`.`id`, `s`.`add_time`, `s`.`name`, `s`.`status`, `s`.`update_time`
+FROM `subject` AS `s`
+WHERE (`s`.`status` <> -1) AND (`s`.`name` = @__subjectName_0)
+LIMIT 1
+
+2019-05-10 17:21:55,519 [13] DEBUG logger - Executed DbCommand (2ms) [Parameters=[@__loginName_0='?' (Size = 4000)], CommandType='Text', CommandTimeout='30']
+SELECT `s`.`Id`, `s`.`add_time`, `s`.`avatar`, `s`.`client_id`, `s`.`gender`, `s`.`login_name`, `s`.`login_password`, `s`.`phone`, `s`.`school_id`, `s`.`status`, `s`.`update_time`, `s`.`user_name`
+FROM `user` AS `s`
+WHERE (`s`.`status` <> -1) AND (`s`.`user_name` = @__loginName_0)
+LIMIT 1
+
+2019-05-10 17:21:59,002 [13] DEBUG logger - Executed DbCommand (1ms) [Parameters=[@__subjectName_0='?' (Size = 4000)], CommandType='Text', CommandTimeout='30']
+SELECT `s`.`id`, `s`.`add_time`, `s`.`name`, `s`.`status`, `s`.`update_time`
+FROM `subject` AS `s`
+WHERE (`s`.`status` <> -1) AND (`s`.`name` = @__subjectName_0)
+LIMIT 1
+
+2019-05-10 17:23:46,320 [13] DEBUG logger - Executed DbCommand (66ms) [Parameters=[@__loginName_0='?' (Size = 4000)], CommandType='Text', CommandTimeout='30']
+SELECT `s`.`Id`, `s`.`add_time`, `s`.`avatar`, `s`.`client_id`, `s`.`gender`, `s`.`login_name`, `s`.`login_password`, `s`.`phone`, `s`.`school_id`, `s`.`status`, `s`.`update_time`, `s`.`user_name`
+FROM `user` AS `s`
+WHERE (`s`.`status` <> -1) AND (`s`.`user_name` = @__loginName_0)
+LIMIT 1
+
+2019-05-10 17:23:54,540 [13] DEBUG logger - Executed DbCommand (1ms) [Parameters=[@__subjectName_0='?' (Size = 4000)], CommandType='Text', CommandTimeout='30']
+SELECT `s`.`id`, `s`.`add_time`, `s`.`name`, `s`.`status`, `s`.`update_time`
+FROM `subject` AS `s`
+WHERE (`s`.`status` <> -1) AND (`s`.`name` = @__subjectName_0)
+LIMIT 1
+
+2019-05-10 17:26:31,675 [13] DEBUG logger - Executed DbCommand (63ms) [Parameters=[@__loginName_0='?' (Size = 4000)], CommandType='Text', CommandTimeout='30']
+SELECT `s`.`Id`, `s`.`add_time`, `s`.`avatar`, `s`.`client_id`, `s`.`gender`, `s`.`login_name`, `s`.`login_password`, `s`.`phone`, `s`.`school_id`, `s`.`status`, `s`.`update_time`, `s`.`user_name`
+FROM `user` AS `s`
+WHERE (`s`.`status` <> -1) AND (`s`.`user_name` = @__loginName_0)
+LIMIT 1
+
+2019-05-10 17:26:31,787 [13] DEBUG logger - Executed DbCommand (1ms) [Parameters=[@__subjectName_0='?' (Size = 4000)], CommandType='Text', CommandTimeout='30']
+SELECT `s`.`id`, `s`.`add_time`, `s`.`name`, `s`.`status`, `s`.`update_time`
+FROM `subject` AS `s`
+WHERE (`s`.`status` <> -1) AND (`s`.`name` = @__subjectName_0)
+LIMIT 1
+
+2019-05-10 17:27:33,400 [14] DEBUG logger - Executed DbCommand (64ms) [Parameters=[@__loginName_0='?' (Size = 4000)], CommandType='Text', CommandTimeout='30']
+SELECT `s`.`Id`, `s`.`add_time`, `s`.`avatar`, `s`.`client_id`, `s`.`gender`, `s`.`login_name`, `s`.`login_password`, `s`.`phone`, `s`.`school_id`, `s`.`status`, `s`.`update_time`, `s`.`user_name`
+FROM `user` AS `s`
+WHERE (`s`.`status` <> -1) AND (`s`.`user_name` = @__loginName_0)
+LIMIT 1
+
+2019-05-10 17:27:33,503 [14] DEBUG logger - Executed DbCommand (2ms) [Parameters=[@__subjectName_0='?' (Size = 4000)], CommandType='Text', CommandTimeout='30']
+SELECT `s`.`id`, `s`.`add_time`, `s`.`name`, `s`.`status`, `s`.`update_time`
+FROM `subject` AS `s`
+WHERE (`s`.`status` <> -1) AND (`s`.`name` = @__subjectName_0)
+LIMIT 1
+
+2019-05-10 17:43:48,708 [14] DEBUG logger - Executed DbCommand (88ms) [Parameters=[@__request_LoginName_0='?' (Size = 4000), @__request_LoginPwd_1='?' (Size = 4000)], CommandType='Text', CommandTimeout='30']
+SELECT `q`.`Id`, `q`.`add_time`, `q`.`avatar`, `q`.`client_id`, `q`.`gender`, `q`.`login_name`, `q`.`login_password`, `q`.`phone`, `q`.`school_id`, `q`.`status`, `q`.`update_time`, `q`.`user_name`
+FROM `user` AS `q`
+WHERE ((`q`.`login_name` = @__request_LoginName_0) AND (`q`.`login_password` = @__request_LoginPwd_1)) AND (`q`.`status` <> -1)
+LIMIT 1
+
+2019-05-10 17:45:06,531 [14] DEBUG logger - Executed DbCommand (70ms) [Parameters=[@__request_LoginName_0='?' (Size = 4000), @__request_LoginPwd_1='?' (Size = 4000)], CommandType='Text', CommandTimeout='30']
+SELECT `q`.`Id`, `q`.`add_time`, `q`.`avatar`, `q`.`client_id`, `q`.`gender`, `q`.`login_name`, `q`.`login_password`, `q`.`phone`, `q`.`school_id`, `q`.`status`, `q`.`update_time`, `q`.`user_name`
+FROM `user` AS `q`
+WHERE ((`q`.`login_name` = @__request_LoginName_0) AND (`q`.`login_password` = @__request_LoginPwd_1)) AND (`q`.`status` <> -1)
+LIMIT 1
+
+2019-05-10 18:08:50,803 [14] DEBUG logger - Executed DbCommand (71ms) [Parameters=[@__request_LoginName_0='?' (Size = 4000), @__request_LoginPwd_1='?' (Size = 4000)], CommandType='Text', CommandTimeout='30']
+SELECT `q`.`Id`, `q`.`add_time`, `q`.`avatar`, `q`.`client_id`, `q`.`gender`, `q`.`login_name`, `q`.`login_password`, `q`.`phone`, `q`.`school_id`, `q`.`status`, `q`.`update_time`, `q`.`user_name`
+FROM `user` AS `q`
+WHERE ((`q`.`login_name` = @__request_LoginName_0) AND (`q`.`login_password` = @__request_LoginPwd_1)) AND (`q`.`status` <> -1)
+LIMIT 1
+
+2019-05-10 18:08:53,028 [14] DEBUG logger - Executed DbCommand (5ms) [Parameters=[@__model_Id_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SELECT `q`.`id`, `q`.`code` AS `RoleName`
+FROM `role` AS `q`
+WHERE `q`.`id` IN (
+    SELECT `q0`.`role_id`
+    FROM `user_and_role` AS `q0`
+    WHERE `q0`.`user_id` = @__model_Id_0
+)
+
+2019-05-10 18:10:25,946 [14] DEBUG logger - Executed DbCommand (74ms) [Parameters=[@__request_LoginName_0='?' (Size = 4000), @__request_LoginPwd_1='?' (Size = 4000)], CommandType='Text', CommandTimeout='30']
+SELECT `q`.`Id`, `q`.`add_time`, `q`.`avatar`, `q`.`client_id`, `q`.`gender`, `q`.`login_name`, `q`.`login_password`, `q`.`phone`, `q`.`school_id`, `q`.`status`, `q`.`update_time`, `q`.`user_name`
+FROM `user` AS `q`
+WHERE ((`q`.`login_name` = @__request_LoginName_0) AND (`q`.`login_password` = @__request_LoginPwd_1)) AND (`q`.`status` <> -1)
+LIMIT 1
+
+2019-05-10 18:10:34,316 [14] DEBUG logger - Executed DbCommand (5ms) [Parameters=[@__model_Id_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SELECT `q`.`id`, `q`.`code` AS `RoleName`
+FROM `role` AS `q`
+WHERE `q`.`id` IN (
+    SELECT `q0`.`role_id`
+    FROM `user_and_role` AS `q0`
+    WHERE `q0`.`user_id` = @__model_Id_0
+)
+
+2019-05-10 18:14:52,780 [13] DEBUG logger - Executed DbCommand (63ms) [Parameters=[@__request_LoginName_0='?' (Size = 4000), @__request_LoginPwd_1='?' (Size = 4000)], CommandType='Text', CommandTimeout='30']
+SELECT `q`.`Id`, `q`.`add_time`, `q`.`avatar`, `q`.`client_id`, `q`.`gender`, `q`.`login_name`, `q`.`login_password`, `q`.`phone`, `q`.`school_id`, `q`.`status`, `q`.`update_time`, `q`.`user_name`
+FROM `user` AS `q`
+WHERE ((`q`.`login_name` = @__request_LoginName_0) AND (`q`.`login_password` = @__request_LoginPwd_1)) AND (`q`.`status` <> -1)
+LIMIT 1
+
+2019-05-10 18:15:04,051 [13] DEBUG logger - Executed DbCommand (5ms) [Parameters=[@__model_Id_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SELECT `q`.`id`, `q`.`code` AS `RoleName`
+FROM `role` AS `q`
+WHERE `q`.`id` IN (
+    SELECT `q0`.`role_id`
+    FROM `user_and_role` AS `q0`
+    WHERE `q0`.`user_id` = @__model_Id_0
+)
+
+2019-05-17 15:59:44,635 [14] DEBUG logger - Executed DbCommand (211ms) [Parameters=[@__request_SchoolId_0='?' (DbType = Int32), @__request_SchoolId_2='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SELECT `q`.`Id`, `q`.`login_name` AS `LoginName`, `q`.`login_password` AS `LoginPassword`, `q`.`avatar`, `q`.`school_id` AS `SchoolId`, `q`.`user_name` AS `UserName`, `q`.`gender`, `q`.`phone`, `q`.`update_time` AS `UpdateTime`, `q`.`add_time` AS `AddTime`, `q`.`client_id` AS `ClientId`, `q`.`status`, `t`.`subject_id` AS `SubjectId`
+FROM `user` AS `q`
+INNER JOIN `user_and_teacher` AS `ut` ON `q`.`Id` = `ut`.`user_id`
+INNER JOIN `teacher` AS `t` ON `ut`.`teacher_id` = `t`.`id`
+INNER JOIN `user_and_role` AS `ur` ON `q`.`Id` = `ur`.`user_id`
+WHERE ((((`q`.`status` <> -1) AND (`q`.`school_id` = @__request_SchoolId_0)) AND `q`.`Id` IN (48)) AND (`q`.`school_id` = @__request_SchoolId_2)) AND (`ur`.`role_id` = 3)
+
+2019-05-17 16:01:21,285 [14] DEBUG logger - Executed DbCommand (76ms) [Parameters=[@__request_SchoolId_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SELECT `q`.`Id`, `q`.`login_name` AS `LoginName`, `q`.`login_password` AS `LoginPassword`, `q`.`avatar`, `q`.`school_id` AS `SchoolId`, `q`.`user_name` AS `UserName`, `q`.`gender`, `q`.`phone`, `q`.`update_time` AS `UpdateTime`, `q`.`add_time` AS `AddTime`, `q`.`client_id` AS `ClientId`, `q`.`status`, `t`.`subject_id` AS `SubjectId`
+FROM `user` AS `q`
+INNER JOIN `user_and_teacher` AS `ut` ON `q`.`Id` = `ut`.`user_id`
+INNER JOIN `teacher` AS `t` ON `ut`.`teacher_id` = `t`.`id`
+INNER JOIN `user_and_role` AS `ur` ON `q`.`Id` = `ur`.`user_id`
+WHERE (((`q`.`status` <> -1) AND (`q`.`school_id` = @__request_SchoolId_0)) AND `q`.`Id` IN (97)) AND (`ur`.`role_id` = 3)
+
+2019-05-17 16:01:26,534 [14] DEBUG logger - Executed DbCommand (1ms) [Parameters=[@__s_Id_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SELECT `q`.`greade_id`
+FROM `teacher_and_grade` AS `q`
+WHERE (`q`.`teacher_id` = @__s_Id_0) AND (`q`.`status` = 0)
+
+2019-05-17 16:01:26,550 [14] DEBUG logger - Executed DbCommand (2ms) [Parameters=[@__s_Id_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SELECT `q`.`id`
+FROM `teacher_and_class` AS `q`
+WHERE (`q`.`teacher_id` = @__s_Id_0) AND (`q`.`status` = 0)
+
+2019-05-17 16:02:04,619 [14] DEBUG logger - Executed DbCommand (1ms) [Parameters=[@__s_SubjectId_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SELECT `q`.`id`, `q`.`add_time`, `q`.`name`, `q`.`status`, `q`.`update_time`
+FROM `subject` AS `q`
+WHERE `q`.`id` = @__s_SubjectId_0
+LIMIT 1
+
+2019-05-17 16:04:40,334 [13] DEBUG logger - Executed DbCommand (75ms) [Parameters=[@__request_SchoolId_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SELECT `q`.`Id`, `q`.`login_name` AS `LoginName`, `q`.`login_password` AS `LoginPassword`, `q`.`avatar`, `q`.`school_id` AS `SchoolId`, `q`.`user_name` AS `UserName`, `q`.`gender`, `q`.`phone`, `q`.`update_time` AS `UpdateTime`, `q`.`add_time` AS `AddTime`, `q`.`client_id` AS `ClientId`, `q`.`status`, `t`.`subject_id` AS `SubjectId`
+FROM `user` AS `q`
+INNER JOIN `user_and_teacher` AS `ut` ON `q`.`Id` = `ut`.`user_id`
+INNER JOIN `teacher` AS `t` ON `ut`.`teacher_id` = `t`.`id`
+INNER JOIN `user_and_role` AS `ur` ON `q`.`Id` = `ur`.`user_id`
+WHERE (((`q`.`status` <> -1) AND (`q`.`school_id` = @__request_SchoolId_0)) AND `q`.`Id` IN (97)) AND (`ur`.`role_id` = 3)
+
+2019-05-17 16:04:41,806 [13] DEBUG logger - Executed DbCommand (1ms) [Parameters=[@__s_TeacherId_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SELECT `q`.`greade_id`
+FROM `teacher_and_grade` AS `q`
+WHERE (`q`.`teacher_id` = @__s_TeacherId_0) AND (`q`.`status` = 0)
+
+2019-05-17 16:04:41,822 [13] DEBUG logger - Executed DbCommand (1ms) [Parameters=[@__s_TeacherId_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SELECT `q`.`class_id`
+FROM `teacher_and_class` AS `q`
+WHERE (`q`.`teacher_id` = @__s_TeacherId_0) AND (`q`.`status` = 0)
+
+2019-05-17 16:04:42,974 [13] DEBUG logger - Executed DbCommand (1ms) [Parameters=[@__s_SubjectId_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SELECT `q`.`id`, `q`.`add_time`, `q`.`name`, `q`.`status`, `q`.`update_time`
+FROM `subject` AS `q`
+WHERE `q`.`id` = @__s_SubjectId_0
+LIMIT 1
+
+2019-05-17 16:06:50,014 [14] DEBUG logger - Executed DbCommand (75ms) [Parameters=[@__request_SchoolId_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SELECT `q`.`Id` AS `Id0`, `q`.`login_name` AS `LoginName`, `q`.`login_password` AS `LoginPassword`, `q`.`avatar`, `q`.`school_id` AS `SchoolId`, `q`.`user_name` AS `UserName`, `q`.`gender`, `q`.`phone`, `q`.`update_time` AS `UpdateTime`, `q`.`add_time` AS `AddTime`, `q`.`client_id` AS `ClientId`, `q`.`status`, `t`.`subject_id` AS `SubjectId`, `t`.`id` AS `TeacherId`
+FROM `user` AS `q`
+INNER JOIN `user_and_teacher` AS `ut` ON `q`.`Id` = `ut`.`user_id`
+INNER JOIN `teacher` AS `t` ON `ut`.`teacher_id` = `t`.`id`
+INNER JOIN `user_and_role` AS `ur` ON `q`.`Id` = `ur`.`user_id`
+WHERE (((`q`.`status` <> -1) AND (`q`.`school_id` = @__request_SchoolId_0)) AND `q`.`Id` IN (97)) AND (`ur`.`role_id` = 3)
+
+2019-05-17 16:06:50,878 [14] DEBUG logger - Executed DbCommand (1ms) [Parameters=[@__s_TeacherId_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SELECT `q`.`greade_id`
+FROM `teacher_and_grade` AS `q`
+WHERE (`q`.`teacher_id` = @__s_TeacherId_0) AND (`q`.`status` = 0)
+
+2019-05-17 16:06:50,894 [14] DEBUG logger - Executed DbCommand (1ms) [Parameters=[@__s_TeacherId_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SELECT `q`.`class_id`
+FROM `teacher_and_class` AS `q`
+WHERE (`q`.`teacher_id` = @__s_TeacherId_0) AND (`q`.`status` = 0)
+
+2019-05-17 16:06:53,388 [14] DEBUG logger - Executed DbCommand (1ms) [Parameters=[@__s_SubjectId_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SELECT `q`.`id`, `q`.`add_time`, `q`.`name`, `q`.`status`, `q`.`update_time`
+FROM `subject` AS `q`
+WHERE `q`.`id` = @__s_SubjectId_0
+LIMIT 1
+
+2019-05-17 16:31:32,218 [14] DEBUG logger - Executed DbCommand (64ms) [Parameters=[@__request_SchoolId_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SELECT `q`.`Id` AS `Id0`, `q`.`login_name` AS `LoginName`, `q`.`login_password` AS `LoginPassword`, `q`.`avatar`, `q`.`school_id` AS `SchoolId`, `q`.`user_name` AS `UserName`, `q`.`gender`, `q`.`phone`, `q`.`update_time` AS `UpdateTime`, `q`.`add_time` AS `AddTime`, `q`.`client_id` AS `ClientId`, `q`.`status`, `t`.`subject_id` AS `SubjectId`, `t`.`id` AS `TeacherId`
+FROM `user` AS `q`
+INNER JOIN `user_and_teacher` AS `ut` ON `q`.`Id` = `ut`.`user_id`
+INNER JOIN `teacher` AS `t` ON `ut`.`teacher_id` = `t`.`id`
+INNER JOIN `user_and_role` AS `ur` ON `q`.`Id` = `ur`.`user_id`
+WHERE (((`q`.`status` <> -1) AND (`q`.`school_id` = @__request_SchoolId_0)) AND `q`.`Id` IN (97)) AND (`ur`.`role_id` = 3)
+
+2019-05-17 16:31:33,667 [14] DEBUG logger - Executed DbCommand (2ms) [Parameters=[@__s_TeacherId_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SELECT `q`.`greade_id`
+FROM `teacher_and_grade` AS `q`
+WHERE (`q`.`teacher_id` = @__s_TeacherId_0) AND (`q`.`status` = 0)
+
+2019-05-17 16:31:33,682 [14] DEBUG logger - Executed DbCommand (1ms) [Parameters=[@__s_TeacherId_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SELECT `q`.`class_id`
+FROM `teacher_and_class` AS `q`
+WHERE (`q`.`teacher_id` = @__s_TeacherId_0) AND (`q`.`status` = 0)
+
+2019-05-17 16:31:39,853 [14] DEBUG logger - Executed DbCommand (1ms) [Parameters=[@__s_SubjectId_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SELECT `q`.`id`, `q`.`add_time`, `q`.`name`, `q`.`status`, `q`.`update_time`
+FROM `subject` AS `q`
+WHERE `q`.`id` = @__s_SubjectId_0
+LIMIT 1
+
+2019-05-17 16:37:45,100 [14] DEBUG logger - Executed DbCommand (65ms) [Parameters=[@__request_SchoolId_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SELECT `q`.`Id` AS `Id0`, `q`.`login_name` AS `LoginName`, `q`.`login_password` AS `LoginPassword`, `q`.`avatar`, `q`.`school_id` AS `SchoolId`, `q`.`user_name` AS `UserName`, `q`.`gender`, `q`.`phone`, `q`.`update_time` AS `UpdateTime`, `q`.`add_time` AS `AddTime`, `q`.`client_id` AS `ClientId`, `q`.`status`, `t`.`subject_id` AS `SubjectId`, `t`.`id` AS `TeacherId`
+FROM `user` AS `q`
+INNER JOIN `user_and_teacher` AS `ut` ON `q`.`Id` = `ut`.`user_id`
+INNER JOIN `teacher` AS `t` ON `ut`.`teacher_id` = `t`.`id`
+INNER JOIN `user_and_role` AS `ur` ON `q`.`Id` = `ur`.`user_id`
+WHERE (((`q`.`status` <> -1) AND (`q`.`school_id` = @__request_SchoolId_0)) AND `q`.`Id` IN (97)) AND (`ur`.`role_id` = 3)
+
+2019-05-17 16:37:45,228 [14] DEBUG logger - Executed DbCommand (1ms) [Parameters=[@__s_TeacherId_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SELECT `q`.`greade_id`
+FROM `teacher_and_grade` AS `q`
+WHERE (`q`.`teacher_id` = @__s_TeacherId_0) AND (`q`.`status` = 0)
+
+2019-05-17 16:37:45,242 [14] DEBUG logger - Executed DbCommand (1ms) [Parameters=[@__s_TeacherId_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SELECT `q`.`class_id`
+FROM `teacher_and_class` AS `q`
+WHERE (`q`.`teacher_id` = @__s_TeacherId_0) AND (`q`.`status` = 0)
+
+2019-05-17 16:37:55,621 [14] DEBUG logger - Executed DbCommand (1ms) [Parameters=[@__s_SubjectId_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SELECT `q`.`id`, `q`.`add_time`, `q`.`name`, `q`.`status`, `q`.`update_time`
+FROM `subject` AS `q`
+WHERE `q`.`id` = @__s_SubjectId_0
+LIMIT 1
+
+2019-07-12 11:48:10,824 [15] DEBUG logger - Executed DbCommand (172ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT `s`.`class_id`
+FROM `user` AS `q`
+INNER JOIN `user_and_student` AS `us` ON `q`.`Id` = `us`.`user_id`
+INNER JOIN `student` AS `s` ON `us`.`student_id` = `s`.`id`
+WHERE (`q`.`status` <> -1) AND `q`.`Id` IN (54)
+
+2019-07-12 11:48:24,909 [15] DEBUG logger - Executed DbCommand (2ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT `q`.`teacher_id`
+FROM `teacher_and_class` AS `q`
+WHERE (`q`.`status` <> -1) AND `q`.`class_id` IN (93)
+
+2019-07-30 20:47:42,097 [16] DEBUG logger - Executed DbCommand (50ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT `s`.`class_id`
+FROM `user` AS `q`
+INNER JOIN `user_and_student` AS `us` ON `q`.`Id` = `us`.`user_id`
+INNER JOIN `student` AS `s` ON `us`.`student_id` = `s`.`id`
+WHERE (`q`.`status` <> -1) AND `q`.`Id` IN (83)
+
+2019-07-30 20:50:26,784 [16] DEBUG logger - Executed DbCommand (2ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT `q`.`teacher_id`
+FROM `teacher_and_class` AS `q`
+WHERE (`q`.`status` <> -1) AND `q`.`class_id` IN (132)
+
+2019-07-30 21:06:13,902 [16] DEBUG logger - Executed DbCommand (58ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT `s`.`class_id`
+FROM `user` AS `q`
+INNER JOIN `user_and_student` AS `us` ON `q`.`Id` = `us`.`user_id`
+INNER JOIN `student` AS `s` ON `us`.`student_id` = `s`.`id`
+WHERE (`q`.`status` <> -1) AND `q`.`Id` IN (83)
+
+2019-07-30 21:06:17,511 [16] DEBUG logger - Executed DbCommand (2ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT `q`.`teacher_id`
+FROM `teacher_and_class` AS `q`
+WHERE (`q`.`status` <> -1) AND `q`.`class_id` IN (132)
+
+2019-07-30 21:06:18,863 [16] DEBUG logger - Executed DbCommand (2ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT `i`.`id`
+FROM `user_and_teacher` AS `i`
+WHERE `i`.`teacher_id` IN (46, 47, 51, 50, 43)
+
+2019-07-30 21:13:18,560 [16] DEBUG logger - Executed DbCommand (43ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT `s`.`class_id`
+FROM `user` AS `q`
+INNER JOIN `user_and_student` AS `us` ON `q`.`Id` = `us`.`user_id`
+INNER JOIN `student` AS `s` ON `us`.`student_id` = `s`.`id`
+WHERE (`q`.`status` <> -1) AND `q`.`Id` IN (83)
+
+2019-07-30 21:13:26,204 [16] DEBUG logger - Executed DbCommand (1ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT `q`.`teacher_id`
+FROM `teacher_and_class` AS `q`
+WHERE (`q`.`status` <> -1) AND `q`.`class_id` IN (132)
+
+2019-07-30 21:13:41,541 [16] DEBUG logger - Executed DbCommand (1ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT `i`.`user_id`
+FROM `user_and_teacher` AS `i`
+WHERE `i`.`teacher_id` IN (46, 47, 51, 50, 43)
+
+2019-08-07 15:49:51,083 [16] DEBUG logger - Executed DbCommand (61ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT COUNT(*)
+FROM `user` AS `q`
+WHERE (`q`.`status` <> -1) AND `q`.`Id` IN (54, 55, 56)
+
+2019-08-07 15:49:54,347 [16] DEBUG logger - Executed DbCommand (2ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT `q`.`login_name` AS `LoginName`, `q`.`login_password` AS `LoginPassword`, `q`.`avatar`, `q`.`school_id` AS `SchoolId`, `q`.`user_name` AS `UserName`, `q`.`gender`, `q`.`phone`, `q`.`update_time` AS `UpdateTime`, `q`.`add_time` AS `AddTime`, `q`.`client_id` AS `ClientId`, `q`.`status`
+FROM `user` AS `q`
+WHERE (`q`.`status` <> -1) AND `q`.`Id` IN (54, 55, 56)
+ORDER BY `q`.`Id` DESC
+
+2019-08-13 15:42:31,033 [16] DEBUG logger - Executed DbCommand (157ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT COUNT(*)
+FROM `user` AS `q`
+WHERE `q`.`status` <> -1
+
+2019-08-13 15:42:36,437 [16] DEBUG logger - Executed DbCommand (73ms) [Parameters=[@__p_1='?' (DbType = Int32), @__p_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SELECT `q`.`Id`, `q`.`login_name` AS `LoginName`, `q`.`login_password` AS `LoginPassword`, `q`.`avatar`, `q`.`school_id` AS `SchoolId`, `q`.`user_name` AS `UserName`, `q`.`gender`, `q`.`phone`, `q`.`update_time` AS `UpdateTime`, `q`.`add_time` AS `AddTime`, `q`.`client_id` AS `ClientId`, `q`.`status`, `ur`.`role_id` AS `RoleId`, `r`.`code` AS `RoleCode`, `r`.`name` AS `RoleName`
+FROM `user` AS `q`
+INNER JOIN `user_and_role` AS `ur` ON `q`.`Id` = `ur`.`user_id`
+INNER JOIN `role` AS `r` ON `ur`.`role_id` = `r`.`id`
+WHERE (`q`.`status` <> -1) AND (`ur`.`role_id` <> 4)
+ORDER BY `q`.`Id` DESC
+LIMIT @__p_1 OFFSET @__p_0
+
+2019-08-13 15:54:14,931 [16] DEBUG logger - Executed DbCommand (50ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT COUNT(*)
+FROM `user` AS `q`
+WHERE `q`.`status` <> -1
+
+2019-08-13 15:54:15,339 [16] DEBUG logger - Executed DbCommand (34ms) [Parameters=[@__p_1='?' (DbType = Int32), @__p_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SELECT `q`.`Id`, `q`.`login_name` AS `LoginName`, `q`.`login_password` AS `LoginPassword`, `q`.`avatar`, `q`.`school_id` AS `SchoolId`, `q`.`user_name` AS `UserName`, `q`.`gender`, `q`.`phone`, `q`.`update_time` AS `UpdateTime`, `q`.`add_time` AS `AddTime`, `q`.`client_id` AS `ClientId`, `q`.`status`, `ur`.`role_id` AS `RoleId`, `r`.`code` AS `RoleCode`, `r`.`name` AS `RoleName`
+FROM `user` AS `q`
+INNER JOIN `user_and_role` AS `ur` ON `q`.`Id` = `ur`.`user_id`
+INNER JOIN `role` AS `r` ON `ur`.`role_id` = `r`.`id`
+WHERE (`q`.`status` <> -1) AND `ur`.`role_id` IN (2, 1)
+ORDER BY `q`.`Id` DESC
+LIMIT @__p_1 OFFSET @__p_0
+
+2019-08-15 14:52:08,529 [16] DEBUG logger - Executed DbCommand (231ms) [Parameters=[@__request_LoginName_0='?' (Size = 4000), @__request_LoginPwd_1='?' (Size = 4000)], CommandType='Text', CommandTimeout='30']
+SELECT `q`.`Id`, `q`.`add_time`, `q`.`avatar`, `q`.`client_id`, `q`.`gender`, `q`.`login_name`, `q`.`login_password`, `q`.`phone`, `q`.`school_id`, `q`.`status`, `q`.`update_time`, `q`.`user_name`
+FROM `user` AS `q`
+WHERE ((`q`.`login_name` = @__request_LoginName_0) AND (`q`.`login_password` = @__request_LoginPwd_1)) AND (`q`.`status` <> -1)
+LIMIT 1
+
+2019-08-15 14:52:22,272 [16] DEBUG logger - Executed DbCommand (8ms) [Parameters=[@__model_Id_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SELECT `q`.`id`, `q`.`code` AS `RoleName`
+FROM `role` AS `q`
+WHERE `q`.`id` IN (
+    SELECT `q0`.`role_id`
+    FROM `user_and_role` AS `q0`
+    WHERE `q0`.`user_id` = @__model_Id_0
+)
+
+2019-08-15 14:53:34,102 [16] DEBUG logger - Executed DbCommand (152ms) [Parameters=[@__request_LoginName_0='?' (Size = 4000), @__request_LoginPwd_1='?' (Size = 4000)], CommandType='Text', CommandTimeout='30']
+SELECT `q`.`Id`, `q`.`add_time`, `q`.`avatar`, `q`.`client_id`, `q`.`gender`, `q`.`login_name`, `q`.`login_password`, `q`.`phone`, `q`.`school_id`, `q`.`status`, `q`.`update_time`, `q`.`user_name`
+FROM `user` AS `q`
+WHERE ((`q`.`login_name` = @__request_LoginName_0) AND (`q`.`login_password` = @__request_LoginPwd_1)) AND (`q`.`status` <> -1)
+LIMIT 1
+
+2019-08-15 14:53:34,640 [16] DEBUG logger - Executed DbCommand (7ms) [Parameters=[@__model_Id_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SELECT `q`.`id`, `q`.`code` AS `RoleName`
+FROM `role` AS `q`
+WHERE `q`.`id` IN (
+    SELECT `q0`.`role_id`
+    FROM `user_and_role` AS `q0`
+    WHERE `q0`.`user_id` = @__model_Id_0
+)
+
+2019-08-15 14:54:23,658 [16] DEBUG logger - Executed DbCommand (2ms) [Parameters=[@__request_LoginName_0='?' (Size = 4000), @__request_LoginPwd_1='?' (Size = 4000)], CommandType='Text', CommandTimeout='30']
+SELECT `q`.`Id`, `q`.`add_time`, `q`.`avatar`, `q`.`client_id`, `q`.`gender`, `q`.`login_name`, `q`.`login_password`, `q`.`phone`, `q`.`school_id`, `q`.`status`, `q`.`update_time`, `q`.`user_name`
+FROM `user` AS `q`
+WHERE ((`q`.`login_name` = @__request_LoginName_0) AND (`q`.`login_password` = @__request_LoginPwd_1)) AND (`q`.`status` <> -1)
+LIMIT 1
+
+2019-08-15 14:55:08,834 [16] DEBUG logger - Executed DbCommand (1ms) [Parameters=[@__model_Id_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SELECT `q`.`id`, `q`.`code` AS `RoleName`
+FROM `role` AS `q`
+WHERE `q`.`id` IN (
+    SELECT `q0`.`role_id`
+    FROM `user_and_role` AS `q0`
+    WHERE `q0`.`user_id` = @__model_Id_0
+)
+
+2019-08-21 16:28:40,151 [14] DEBUG logger - Executed DbCommand (77ms) [Parameters=[@__request_Id_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SELECT `q`.`Id`, `q`.`add_time`, `q`.`avatar`, `q`.`client_id`, `q`.`gender`, `q`.`login_name`, `q`.`login_password`, `q`.`phone`, `q`.`school_id`, `q`.`status`, `q`.`update_time`, `q`.`user_name`
+FROM `user` AS `q`
+WHERE (`q`.`Id` = @__request_Id_0) AND (`q`.`status` <> -1)
+LIMIT 1
+
+2019-08-21 16:28:58,860 [14] DEBUG logger - Executed DbCommand (2ms) [Parameters=[@__userInfo_Id_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SELECT `q`.`id`, `q`.`role_id`, `q`.`user_id`
+FROM `user_and_role` AS `q`
+WHERE `q`.`user_id` = @__userInfo_Id_0
+LIMIT 1
+
+2019-08-21 16:30:12,433 [14] DEBUG logger - Executed DbCommand (109ms) [Parameters=[@__request_Id_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SELECT `q`.`Id`, `q`.`add_time`, `q`.`avatar`, `q`.`client_id`, `q`.`gender`, `q`.`login_name`, `q`.`login_password`, `q`.`phone`, `q`.`school_id`, `q`.`status`, `q`.`update_time`, `q`.`user_name`
+FROM `user` AS `q`
+WHERE (`q`.`Id` = @__request_Id_0) AND (`q`.`status` <> -1)
+LIMIT 1
+
+2019-08-21 16:30:23,181 [14] DEBUG logger - Executed DbCommand (1ms) [Parameters=[@__userInfo_Id_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SELECT `q`.`id`, `q`.`role_id`, `q`.`user_id`
+FROM `user_and_role` AS `q`
+WHERE `q`.`user_id` = @__userInfo_Id_0
+LIMIT 1
+
+2019-08-21 16:35:35,201 [14] DEBUG logger - Executed DbCommand (100ms) [Parameters=[@__request_Id_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SELECT `q`.`Id`, `q`.`add_time`, `q`.`avatar`, `q`.`client_id`, `q`.`gender`, `q`.`login_name`, `q`.`login_password`, `q`.`phone`, `q`.`school_id`, `q`.`status`, `q`.`update_time`, `q`.`user_name`
+FROM `user` AS `q`
+WHERE (`q`.`Id` = @__request_Id_0) AND (`q`.`status` <> -1)
+LIMIT 1
+
+2019-08-21 16:35:59,727 [14] DEBUG logger - Executed DbCommand (2ms) [Parameters=[@__request_Id_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SELECT `q`.`id`, `q`.`role_id`, `q`.`user_id`
+FROM `user_and_role` AS `q`
+WHERE `q`.`user_id` = @__request_Id_0
+LIMIT 1
+
+2019-08-23 10:56:21,001 [16] DEBUG logger - Executed DbCommand (57ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT `q`.`id`, `q`.`add_time`, `q`.`icon`, `q`.`is_menu`, `q`.`menu_key`, `q`.`name`, `q`.`parent_id`, `q`.`router`, `q`.`sort_id`, `q`.`status`, `q`.`update_time`
+FROM `menu` AS `q`
+WHERE `q`.`status` <> -1
+
+2019-08-27 17:39:16,103 [13] DEBUG logger - Executed DbCommand (205ms) [Parameters=[@__request_RoleId_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SELECT `q`.`id`, `q`.`name`, `q`.`menu_key` AS `Router`, `q`.`parent_id` AS `ParentId`, `q`.`sort_id` AS `SortId`, `q`.`update_time` AS `UpdateTime`, `q`.`add_time` AS `AddTime`, `q`.`is_menu` AS `IsMenu`, `q`.`view_url` AS `ViewUrl`, `q`.`view_name` AS `ViewName`, `q`.`icon`, `q`.`status`
+FROM `menu` AS `q`
+INNER JOIN `role_and_menu` AS `m` ON `q`.`id` = `m`.`menu_id`
+WHERE (`q`.`status` <> -1) AND (`m`.`role_id` = @__request_RoleId_0)
+
+2019-08-28 10:20:46,596 [16] DEBUG logger - Executed DbCommand (90ms) [Parameters=[@__request_RoleId_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SELECT COUNT(*)
+FROM `role_and_menu` AS `q`
+WHERE `q`.`role_id` = @__request_RoleId_0
+
+2019-08-28 10:20:47,960 [16] DEBUG logger - Executed DbCommand (1ms) [Parameters=[@__request_RoleId_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SELECT `q`.`id`, `q`.`menu_id`, `q`.`role_id`
+FROM `role_and_menu` AS `q`
+WHERE `q`.`role_id` = @__request_RoleId_0
+
+2019-08-28 10:22:10,747 [16] DEBUG logger - Executed DbCommand (474ms) [Parameters=[@__request_RoleId_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SELECT COUNT(*)
+FROM `role_and_menu` AS `q`
+WHERE `q`.`role_id` = @__request_RoleId_0
+
+2019-08-28 10:22:12,917 [16] DEBUG logger - Executed DbCommand (2ms) [Parameters=[@__request_RoleId_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SELECT `q`.`id`, `q`.`menu_id`, `q`.`role_id`
+FROM `role_and_menu` AS `q`
+WHERE `q`.`role_id` = @__request_RoleId_0
+
+2019-08-28 10:28:29,004 [16] DEBUG logger - Executed DbCommand (144ms) [Parameters=[@__request_RoleId_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SELECT COUNT(*)
+FROM `role_and_menu` AS `q`
+WHERE `q`.`role_id` = @__request_RoleId_0
+
+2019-08-28 10:28:30,560 [16] DEBUG logger - Executed DbCommand (1ms) [Parameters=[@__request_RoleId_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SELECT `q`.`id`, `q`.`menu_id`, `q`.`role_id`
+FROM `role_and_menu` AS `q`
+WHERE `q`.`role_id` = @__request_RoleId_0
+
+2019-08-28 10:28:39,867 [16] DEBUG logger - Executed DbCommand (3ms) [Parameters=[@p0='?' (DbType = Int32), @p1='?' (DbType = Int32), @p2='?' (DbType = Int32), @p3='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+DELETE FROM `role_and_menu`
+WHERE `id` = @p0;
+SELECT ROW_COUNT();
+
+DELETE FROM `role_and_menu`
+WHERE `id` = @p1;
+SELECT ROW_COUNT();
+
+DELETE FROM `role_and_menu`
+WHERE `id` = @p2;
+SELECT ROW_COUNT();
+
+DELETE FROM `role_and_menu`
+WHERE `id` = @p3;
+SELECT ROW_COUNT();
+
+2019-08-28 10:30:05,423 [16] DEBUG logger - Executed DbCommand (157ms) [Parameters=[@__request_RoleId_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SELECT COUNT(*)
+FROM `role_and_menu` AS `q`
+WHERE `q`.`role_id` = @__request_RoleId_0
+
+2019-08-28 10:30:06,091 [16] DEBUG logger - Executed DbCommand (2ms) [Parameters=[@p0='?' (DbType = Int32), @p1='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+INSERT INTO `role_and_menu` (`menu_id`, `role_id`)
+VALUES (@p0, @p1);
+SELECT `id`
+FROM `role_and_menu`
+WHERE ROW_COUNT() = 1 AND `id` = LAST_INSERT_ID();
+
+2019-08-28 10:30:06,133 [16] DEBUG logger - Executed DbCommand (1ms) [Parameters=[@p0='?' (DbType = Int32), @p1='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+INSERT INTO `role_and_menu` (`menu_id`, `role_id`)
+VALUES (@p0, @p1);
+SELECT `id`
+FROM `role_and_menu`
+WHERE ROW_COUNT() = 1 AND `id` = LAST_INSERT_ID();
+
+2019-08-28 10:30:06,144 [16] DEBUG logger - Executed DbCommand (2ms) [Parameters=[@p0='?' (DbType = Int32), @p1='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+INSERT INTO `role_and_menu` (`menu_id`, `role_id`)
+VALUES (@p0, @p1);
+SELECT `id`
+FROM `role_and_menu`
+WHERE ROW_COUNT() = 1 AND `id` = LAST_INSERT_ID();
+
+2019-08-28 14:37:39,082 [16] DEBUG logger - Executed DbCommand (62ms) [Parameters=[@__request_RoleId_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SELECT `q`.`id`, `q`.`name`, `q`.`menu_key` AS `Router`, `q`.`parent_id` AS `ParentId`, `q`.`sort_id` AS `SortId`, `q`.`update_time` AS `UpdateTime`, `q`.`add_time` AS `AddTime`, `q`.`is_menu` AS `IsMenu`, `q`.`view_url` AS `ViewUrl`, `q`.`view_name` AS `ViewName`, `q`.`folder`, `q`.`icon`, `q`.`status`
+FROM `menu` AS `q`
+INNER JOIN `role_and_menu` AS `m` ON `q`.`id` = `m`.`menu_id`
+WHERE (`q`.`status` <> -1) AND (`m`.`role_id` = @__request_RoleId_0)
+
+2019-08-29 14:01:47,323 [16] DEBUG logger - Executed DbCommand (65ms) [Parameters=[@__request_LoginName_0='?' (Size = 4000), @__request_LoginPwd_1='?' (Size = 4000)], CommandType='Text', CommandTimeout='30']
+SELECT `q`.`Id`, `q`.`add_time`, `q`.`avatar`, `q`.`client_id`, `q`.`gender`, `q`.`login_name`, `q`.`login_password`, `q`.`phone`, `q`.`school_id`, `q`.`status`, `q`.`update_time`, `q`.`user_name`
+FROM `user` AS `q`
+WHERE ((`q`.`login_name` = @__request_LoginName_0) AND (`q`.`login_password` = @__request_LoginPwd_1)) AND (`q`.`status` <> -1)
+LIMIT 1
+
+2019-08-29 14:01:52,075 [16] DEBUG logger - Executed DbCommand (5ms) [Parameters=[@__model_Id_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SELECT `q`.`id`, `q`.`code` AS `RoleName`
+FROM `role` AS `q`
+WHERE `q`.`id` IN (
+    SELECT `q0`.`role_id`
+    FROM `user_and_role` AS `q0`
+    WHERE `q0`.`user_id` = @__model_Id_0
+)
+
+2019-08-29 14:09:40,814 [16] DEBUG logger - Executed DbCommand (60ms) [Parameters=[@__request_LoginName_0='?' (Size = 4000), @__request_LoginPwd_1='?' (Size = 4000)], CommandType='Text', CommandTimeout='30']
+SELECT `q`.`Id`, `q`.`add_time`, `q`.`avatar`, `q`.`client_id`, `q`.`gender`, `q`.`login_name`, `q`.`login_password`, `q`.`phone`, `q`.`school_id`, `q`.`status`, `q`.`update_time`, `q`.`user_name`
+FROM `user` AS `q`
+WHERE ((`q`.`login_name` = @__request_LoginName_0) AND (`q`.`login_password` = @__request_LoginPwd_1)) AND (`q`.`status` <> -1)
+LIMIT 1
+
+2019-08-29 14:09:43,600 [16] DEBUG logger - Executed DbCommand (4ms) [Parameters=[@__model_Id_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SELECT `q`.`id`, `q`.`role_id`, `q`.`user_id`
+FROM `user_and_role` AS `q`
+WHERE `q`.`user_id` = @__model_Id_0
+LIMIT 1
+
+2019-08-29 14:09:44,734 [16] DEBUG logger - Executed DbCommand (2ms) [Parameters=[@__model_Id_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SELECT `q`.`id`, `q`.`code` AS `RoleName`
+FROM `role` AS `q`
+WHERE `q`.`id` IN (
+    SELECT `q0`.`role_id`
+    FROM `user_and_role` AS `q0`
+    WHERE `q0`.`user_id` = @__model_Id_0
+)
+
+2019-08-29 14:09:53,884 [16] DEBUG logger - Executed DbCommand (3ms) [Parameters=[@__roleId_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SELECT `q`.`id`, `q`.`name`, `q`.`menu_key` AS `Router`, `q`.`parent_id` AS `ParentId`, `q`.`sort_id` AS `SortId`, `q`.`update_time` AS `UpdateTime`, `q`.`add_time` AS `AddTime`, `q`.`is_menu` AS `IsMenu`, `q`.`view_url` AS `ViewUrl`, `q`.`view_name` AS `ViewName`, `q`.`folder`, `q`.`icon`, `q`.`status`
+FROM `menu` AS `q`
+INNER JOIN `role_and_menu` AS `m` ON `q`.`id` = `m`.`menu_id`
+WHERE ((`q`.`status` <> -1) AND (`q`.`is_menu` = 1)) AND (`m`.`role_id` = @__roleId_0)
+
+2019-08-29 14:10:06,362 [16] DEBUG logger - Executed DbCommand (1ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT `q`.`menu_key`
+FROM `menu` AS `q`
+WHERE (`q`.`status` <> -1) AND (`q`.`is_menu` = 0)
+
+2019-08-29 14:24:34,435 [16] DEBUG logger - Executed DbCommand (62ms) [Parameters=[@__request_RoleId_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SELECT `q`.`id`, `q`.`name`, `q`.`menu_key` AS `Router`, `q`.`parent_id` AS `ParentId`, `q`.`sort_id` AS `SortId`, `q`.`update_time` AS `UpdateTime`, `q`.`add_time` AS `AddTime`, `q`.`is_menu` AS `IsMenu`, `q`.`view_url` AS `ViewUrl`, `q`.`view_name` AS `ViewName`, `q`.`folder`, `q`.`icon`, `q`.`status`
+FROM `menu` AS `q`
+INNER JOIN `role_and_menu` AS `m` ON `q`.`id` = `m`.`menu_id`
+WHERE ((`q`.`status` <> -1) AND (`q`.`is_menu` = 1)) AND (`m`.`role_id` = @__request_RoleId_0)
+
+2019-08-29 14:32:29,847 [16] DEBUG logger - Executed DbCommand (67ms) [Parameters=[@__request_RoleId_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SELECT DISTINCT `q`.`id`, `q`.`name`, `q`.`menu_key` AS `Router`, `q`.`parent_id` AS `ParentId`, `q`.`sort_id` AS `SortId`, `q`.`update_time` AS `UpdateTime`, `q`.`add_time` AS `AddTime`, `q`.`is_menu` AS `IsMenu`, `q`.`view_url` AS `ViewUrl`, `q`.`view_name` AS `ViewName`, `q`.`folder`, `q`.`icon`, `q`.`status`
+FROM `menu` AS `q`
+INNER JOIN `role_and_menu` AS `m` ON `q`.`id` = `m`.`menu_id`
+WHERE ((`q`.`status` <> -1) AND (`q`.`is_menu` = 1)) AND (`m`.`role_id` = @__request_RoleId_0)
+
+2019-08-29 17:27:45,357 [16] DEBUG logger - Executed DbCommand (99ms) [Parameters=[@__request_LoginName_0='?' (Size = 4000), @__request_LoginPwd_1='?' (Size = 4000)], CommandType='Text', CommandTimeout='30']
+SELECT `q`.`Id`, `q`.`add_time`, `q`.`avatar`, `q`.`client_id`, `q`.`gender`, `q`.`login_name`, `q`.`login_password`, `q`.`phone`, `q`.`school_id`, `q`.`status`, `q`.`update_time`, `q`.`user_name`
+FROM `user` AS `q`
+WHERE ((`q`.`login_name` = @__request_LoginName_0) AND (`q`.`login_password` = @__request_LoginPwd_1)) AND (`q`.`status` <> -1)
+LIMIT 1
+
+2019-08-29 17:27:52,956 [16] DEBUG logger - Executed DbCommand (5ms) [Parameters=[@__model_Id_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SELECT `q`.`id`, `q`.`role_id`, `q`.`user_id`
+FROM `user_and_role` AS `q`
+WHERE `q`.`user_id` = @__model_Id_0
+LIMIT 1
+
+2019-08-29 17:27:53,087 [16] DEBUG logger - Executed DbCommand (1ms) [Parameters=[@__model_Id_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SELECT `q`.`id`, `q`.`code` AS `RoleName`
+FROM `role` AS `q`
+WHERE `q`.`id` IN (
+    SELECT `q0`.`role_id`
+    FROM `user_and_role` AS `q0`
+    WHERE `q0`.`user_id` = @__model_Id_0
+)
+
+2019-08-29 17:28:05,097 [16] DEBUG logger - Executed DbCommand (4ms) [Parameters=[@__roleId_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SELECT DISTINCT `q`.`id`, `q`.`name`, `q`.`menu_key` AS `Router`, `q`.`parent_id` AS `ParentId`, `q`.`sort_id` AS `SortId`, `q`.`update_time` AS `UpdateTime`, `q`.`add_time` AS `AddTime`, `q`.`is_menu` AS `IsMenu`, `q`.`view_url` AS `ViewUrl`, `q`.`view_name` AS `ViewName`, `q`.`folder`, `q`.`icon`, `q`.`status`
+FROM `menu` AS `q`
+INNER JOIN `role_and_menu` AS `m` ON `q`.`id` = `m`.`menu_id`
+WHERE ((`q`.`status` <> -1) AND (`q`.`is_menu` = 1)) AND (`m`.`role_id` = @__roleId_0)
+
+2019-08-29 17:29:16,100 [16] DEBUG logger - Executed DbCommand (1ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT `q`.`menu_key`
+FROM `menu` AS `q`
+WHERE (`q`.`status` <> -1) AND (`q`.`is_menu` = 0)
+
+2019-08-29 17:29:41,804 [16] DEBUG logger - Executed DbCommand (85ms) [Parameters=[@__request_LoginName_0='?' (Size = 4000), @__request_LoginPwd_1='?' (Size = 4000)], CommandType='Text', CommandTimeout='30']
+SELECT `q`.`Id`, `q`.`add_time`, `q`.`avatar`, `q`.`client_id`, `q`.`gender`, `q`.`login_name`, `q`.`login_password`, `q`.`phone`, `q`.`school_id`, `q`.`status`, `q`.`update_time`, `q`.`user_name`
+FROM `user` AS `q`
+WHERE ((`q`.`login_name` = @__request_LoginName_0) AND (`q`.`login_password` = @__request_LoginPwd_1)) AND (`q`.`status` <> -1)
+LIMIT 1
+
+2019-08-29 17:29:42,043 [16] DEBUG logger - Executed DbCommand (6ms) [Parameters=[@__model_Id_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SELECT `q`.`id`, `q`.`role_id`, `q`.`user_id`
+FROM `user_and_role` AS `q`
+WHERE `q`.`user_id` = @__model_Id_0
+LIMIT 1
+
+2019-08-29 17:29:42,201 [16] DEBUG logger - Executed DbCommand (1ms) [Parameters=[@__model_Id_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SELECT `q`.`id`, `q`.`code` AS `RoleName`
+FROM `role` AS `q`
+WHERE `q`.`id` IN (
+    SELECT `q0`.`role_id`
+    FROM `user_and_role` AS `q0`
+    WHERE `q0`.`user_id` = @__model_Id_0
+)
+
+2019-08-29 17:29:45,060 [16] DEBUG logger - Executed DbCommand (5ms) [Parameters=[@__roleId_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SELECT DISTINCT `q`.`id`, `q`.`name`, `q`.`menu_key` AS `Router`, `q`.`parent_id` AS `ParentId`, `q`.`sort_id` AS `SortId`, `q`.`update_time` AS `UpdateTime`, `q`.`add_time` AS `AddTime`, `q`.`is_menu` AS `IsMenu`, `q`.`view_url` AS `ViewUrl`, `q`.`view_name` AS `ViewName`, `q`.`folder`, `q`.`icon`, `q`.`status`
+FROM `menu` AS `q`
+INNER JOIN `role_and_menu` AS `m` ON `q`.`id` = `m`.`menu_id`
+WHERE ((`q`.`status` <> -1) AND (`q`.`is_menu` = 1)) AND (`m`.`role_id` = @__roleId_0)
+
+2019-08-29 17:32:08,926 [16] DEBUG logger - Executed DbCommand (102ms) [Parameters=[@__request_LoginName_0='?' (Size = 4000), @__request_LoginPwd_1='?' (Size = 4000)], CommandType='Text', CommandTimeout='30']
+SELECT `q`.`Id`, `q`.`add_time`, `q`.`avatar`, `q`.`client_id`, `q`.`gender`, `q`.`login_name`, `q`.`login_password`, `q`.`phone`, `q`.`school_id`, `q`.`status`, `q`.`update_time`, `q`.`user_name`
+FROM `user` AS `q`
+WHERE ((`q`.`login_name` = @__request_LoginName_0) AND (`q`.`login_password` = @__request_LoginPwd_1)) AND (`q`.`status` <> -1)
+LIMIT 1
+
+2019-08-29 21:34:32,971 [16] DEBUG logger - Executed DbCommand (68ms) [Parameters=[@__request_RoleId_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SELECT COUNT(*)
+FROM `role_and_menu` AS `q`
+WHERE `q`.`role_id` = @__request_RoleId_0
+
+2019-08-29 21:34:35,088 [16] DEBUG logger - Executed DbCommand (2ms) [Parameters=[@__request_RoleId_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SELECT `q`.`id`, `q`.`menu_id`, `q`.`role_id`
+FROM `role_and_menu` AS `q`
+WHERE `q`.`role_id` = @__request_RoleId_0
+
+2019-08-29 21:37:08,392 [16] DEBUG logger - Executed DbCommand (68ms) [Parameters=[@__request_RoleId_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SELECT COUNT(*)
+FROM `role_and_menu` AS `q`
+WHERE `q`.`role_id` = @__request_RoleId_0
+
+2019-08-29 21:37:08,528 [16] DEBUG logger - Executed DbCommand (1ms) [Parameters=[@__request_RoleId_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SELECT `q`.`id`, `q`.`menu_id`, `q`.`role_id`
+FROM `role_and_menu` AS `q`
+WHERE `q`.`role_id` = @__request_RoleId_0
+
+2019-08-29 21:37:18,841 [16] DEBUG logger - Executed DbCommand (4ms) [Parameters=[@p0='?' (DbType = Int32), @p1='?' (DbType = Int32), @p2='?' (DbType = Int32), @p3='?' (DbType = Int32), @p4='?' (DbType = Int32), @p5='?' (DbType = Int32), @p6='?' (DbType = Int32), @p7='?' (DbType = Int32), @p8='?' (DbType = Int32), @p9='?' (DbType = Int32), @p10='?' (DbType = Int32), @p11='?' (DbType = Int32), @p12='?' (DbType = Int32), @p13='?' (DbType = Int32), @p14='?' (DbType = Int32), @p15='?' (DbType = Int32), @p16='?' (DbType = Int32), @p17='?' (DbType = Int32), @p18='?' (DbType = Int32), @p19='?' (DbType = Int32), @p20='?' (DbType = Int32), @p21='?' (DbType = Int32), @p22='?' (DbType = Int32), @p23='?' (DbType = Int32), @p24='?' (DbType = Int32), @p25='?' (DbType = Int32), @p26='?' (DbType = Int32), @p27='?' (DbType = Int32), @p28='?' (DbType = Int32), @p29='?' (DbType = Int32), @p30='?' (DbType = Int32), @p31='?' (DbType = Int32), @p32='?' (DbType = Int32), @p33='?' (DbType = Int32), @p34='?' (DbType = Int32), @p35='?' (DbType = Int32), @p36='?' (DbType = Int32), @p37='?' (DbType = Int32), @p38='?' (DbType = Int32), @p39='?' (DbType = Int32), @p40='?' (DbType = Int32), @p41='?' (DbType = Int32), @p42='?' (DbType = Int32), @p43='?' (DbType = Int32), @p44='?' (DbType = Int32), @p45='?' (DbType = Int32), @p46='?' (DbType = Int32), @p47='?' (DbType = Int32), @p48='?' (DbType = Int32), @p49='?' (DbType = Int32), @p50='?' (DbType = Int32), @p51='?' (DbType = Int32), @p52='?' (DbType = Int32), @p53='?' (DbType = Int32), @p54='?' (DbType = Int32), @p55='?' (DbType = Int32), @p56='?' (DbType = Int32), @p57='?' (DbType = Int32), @p58='?' (DbType = Int32), @p59='?' (DbType = Int32), @p60='?' (DbType = Int32), @p61='?' (DbType = Int32), @p62='?' (DbType = Int32), @p63='?' (DbType = Int32), @p64='?' (DbType = Int32), @p65='?' (DbType = Int32), @p66='?' (DbType = Int32), @p67='?' (DbType = Int32), @p68='?' (DbType = Int32), @p69='?' (DbType = Int32), @p70='?' (DbType = Int32), @p71='?' (DbType = Int32), @p72='?' (DbType = Int32), @p73='?' (DbType = Int32), @p74='?' (DbType = Int32), @p75='?' (DbType = Int32), @p76='?' (DbType = Int32), @p77='?' (DbType = Int32), @p78='?' (DbType = Int32), @p79='?' (DbType = Int32), @p80='?' (DbType = Int32), @p81='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+DELETE FROM `role_and_menu`
+WHERE `id` = @p0;
+SELECT ROW_COUNT();
+
+DELETE FROM `role_and_menu`
+WHERE `id` = @p1;
+SELECT ROW_COUNT();
+
+DELETE FROM `role_and_menu`
+WHERE `id` = @p2;
+SELECT ROW_COUNT();
+
+DELETE FROM `role_and_menu`
+WHERE `id` = @p3;
+SELECT ROW_COUNT();
+
+DELETE FROM `role_and_menu`
+WHERE `id` = @p4;
+SELECT ROW_COUNT();
+
+DELETE FROM `role_and_menu`
+WHERE `id` = @p5;
+SELECT ROW_COUNT();
+
+DELETE FROM `role_and_menu`
+WHERE `id` = @p6;
+SELECT ROW_COUNT();
+
+DELETE FROM `role_and_menu`
+WHERE `id` = @p7;
+SELECT ROW_COUNT();
+
+DELETE FROM `role_and_menu`
+WHERE `id` = @p8;
+SELECT ROW_COUNT();
+
+DELETE FROM `role_and_menu`
+WHERE `id` = @p9;
+SELECT ROW_COUNT();
+
+DELETE FROM `role_and_menu`
+WHERE `id` = @p10;
+SELECT ROW_COUNT();
+
+DELETE FROM `role_and_menu`
+WHERE `id` = @p11;
+SELECT ROW_COUNT();
+
+DELETE FROM `role_and_menu`
+WHERE `id` = @p12;
+SELECT ROW_COUNT();
+
+DELETE FROM `role_and_menu`
+WHERE `id` = @p13;
+SELECT ROW_COUNT();
+
+DELETE FROM `role_and_menu`
+WHERE `id` = @p14;
+SELECT ROW_COUNT();
+
+DELETE FROM `role_and_menu`
+WHERE `id` = @p15;
+SELECT ROW_COUNT();
+
+DELETE FROM `role_and_menu`
+WHERE `id` = @p16;
+SELECT ROW_COUNT();
+
+DELETE FROM `role_and_menu`
+WHERE `id` = @p17;
+SELECT ROW_COUNT();
+
+DELETE FROM `role_and_menu`
+WHERE `id` = @p18;
+SELECT ROW_COUNT();
+
+DELETE FROM `role_and_menu`
+WHERE `id` = @p19;
+SELECT ROW_COUNT();
+
+DELETE FROM `role_and_menu`
+WHERE `id` = @p20;
+SELECT ROW_COUNT();
+
+DELETE FROM `role_and_menu`
+WHERE `id` = @p21;
+SELECT ROW_COUNT();
+
+DELETE FROM `role_and_menu`
+WHERE `id` = @p22;
+SELECT ROW_COUNT();
+
+DELETE FROM `role_and_menu`
+WHERE `id` = @p23;
+SELECT ROW_COUNT();
+
+DELETE FROM `role_and_menu`
+WHERE `id` = @p24;
+SELECT ROW_COUNT();
+
+DELETE FROM `role_and_menu`
+WHERE `id` = @p25;
+SELECT ROW_COUNT();
+
+INSERT INTO `role_and_menu` (`menu_id`, `role_id`)
+VALUES (@p26, @p27);
+SELECT `id`
+FROM `role_and_menu`
+WHERE ROW_COUNT() = 1 AND `id` = LAST_INSERT_ID();
+
+INSERT INTO `role_and_menu` (`menu_id`, `role_id`)
+VALUES (@p28, @p29);
+SELECT `id`
+FROM `role_and_menu`
+WHERE ROW_COUNT() = 1 AND `id` = LAST_INSERT_ID();
+
+INSERT INTO `role_and_menu` (`menu_id`, `role_id`)
+VALUES (@p30, @p31);
+SELECT `id`
+FROM `role_and_menu`
+WHERE ROW_COUNT() = 1 AND `id` = LAST_INSERT_ID();
+
+INSERT INTO `role_and_menu` (`menu_id`, `role_id`)
+VALUES (@p32, @p33);
+SELECT `id`
+FROM `role_and_menu`
+WHERE ROW_COUNT() = 1 AND `id` = LAST_INSERT_ID();
+
+INSERT INTO `role_and_menu` (`menu_id`, `role_id`)
+VALUES (@p34, @p35);
+SELECT `id`
+FROM `role_and_menu`
+WHERE ROW_COUNT() = 1 AND `id` = LAST_INSERT_ID();
+
+INSERT INTO `role_and_menu` (`menu_id`, `role_id`)
+VALUES (@p36, @p37);
+SELECT `id`
+FROM `role_and_menu`
+WHERE ROW_COUNT() = 1 AND `id` = LAST_INSERT_ID();
+
+INSERT INTO `role_and_menu` (`menu_id`, `role_id`)
+VALUES (@p38, @p39);
+SELECT `id`
+FROM `role_and_menu`
+WHERE ROW_COUNT() = 1 AND `id` = LAST_INSERT_ID();
+
+INSERT INTO `role_and_menu` (`menu_id`, `role_id`)
+VALUES (@p40, @p41);
+SELECT `id`
+FROM `role_and_menu`
+WHERE ROW_COUNT() = 1 AND `id` = LAST_INSERT_ID();
+
+INSERT INTO `role_and_menu` (`menu_id`, `role_id`)
+VALUES (@p42, @p43);
+SELECT `id`
+FROM `role_and_menu`
+WHERE ROW_COUNT() = 1 AND `id` = LAST_INSERT_ID();
+
+INSERT INTO `role_and_menu` (`menu_id`, `role_id`)
+VALUES (@p44, @p45);
+SELECT `id`
+FROM `role_and_menu`
+WHERE ROW_COUNT() = 1 AND `id` = LAST_INSERT_ID();
+
+INSERT INTO `role_and_menu` (`menu_id`, `role_id`)
+VALUES (@p46, @p47);
+SELECT `id`
+FROM `role_and_menu`
+WHERE ROW_COUNT() = 1 AND `id` = LAST_INSERT_ID();
+
+INSERT INTO `role_and_menu` (`menu_id`, `role_id`)
+VALUES (@p48, @p49);
+SELECT `id`
+FROM `role_and_menu`
+WHERE ROW_COUNT() = 1 AND `id` = LAST_INSERT_ID();
+
+INSERT INTO `role_and_menu` (`menu_id`, `role_id`)
+VALUES (@p50, @p51);
+SELECT `id`
+FROM `role_and_menu`
+WHERE ROW_COUNT() = 1 AND `id` = LAST_INSERT_ID();
+
+INSERT INTO `role_and_menu` (`menu_id`, `role_id`)
+VALUES (@p52, @p53);
+SELECT `id`
+FROM `role_and_menu`
+WHERE ROW_COUNT() = 1 AND `id` = LAST_INSERT_ID();
+
+INSERT INTO `role_and_menu` (`menu_id`, `role_id`)
+VALUES (@p54, @p55);
+SELECT `id`
+FROM `role_and_menu`
+WHERE ROW_COUNT() = 1 AND `id` = LAST_INSERT_ID();
+
+INSERT INTO `role_and_menu` (`menu_id`, `role_id`)
+VALUES (@p56, @p57);
+SELECT `id`
+FROM `role_and_menu`
+WHERE ROW_COUNT() = 1 AND `id` = LAST_INSERT_ID();
+
+INSERT INTO `role_and_menu` (`menu_id`, `role_id`)
+VALUES (@p58, @p59);
+SELECT `id`
+FROM `role_and_menu`
+WHERE ROW_COUNT() = 1 AND `id` = LAST_INSERT_ID();
+
+INSERT INTO `role_and_menu` (`menu_id`, `role_id`)
+VALUES (@p60, @p61);
+SELECT `id`
+FROM `role_and_menu`
+WHERE ROW_COUNT() = 1 AND `id` = LAST_INSERT_ID();
+
+INSERT INTO `role_and_menu` (`menu_id`, `role_id`)
+VALUES (@p62, @p63);
+SELECT `id`
+FROM `role_and_menu`
+WHERE ROW_COUNT() = 1 AND `id` = LAST_INSERT_ID();
+
+INSERT INTO `role_and_menu` (`menu_id`, `role_id`)
+VALUES (@p64, @p65);
+SELECT `id`
+FROM `role_and_menu`
+WHERE ROW_COUNT() = 1 AND `id` = LAST_INSERT_ID();
+
+INSERT INTO `role_and_menu` (`menu_id`, `role_id`)
+VALUES (@p66, @p67);
+SELECT `id`
+FROM `role_and_menu`
+WHERE ROW_COUNT() = 1 AND `id` = LAST_INSERT_ID();
+
+INSERT INTO `role_and_menu` (`menu_id`, `role_id`)
+VALUES (@p68, @p69);
+SELECT `id`
+FROM `role_and_menu`
+WHERE ROW_COUNT() = 1 AND `id` = LAST_INSERT_ID();
+
+INSERT INTO `role_and_menu` (`menu_id`, `role_id`)
+VALUES (@p70, @p71);
+SELECT `id`
+FROM `role_and_menu`
+WHERE ROW_COUNT() = 1 AND `id` = LAST_INSERT_ID();
+
+INSERT INTO `role_and_menu` (`menu_id`, `role_id`)
+VALUES (@p72, @p73);
+SELECT `id`
+FROM `role_and_menu`
+WHERE ROW_COUNT() = 1 AND `id` = LAST_INSERT_ID();
+
+INSERT INTO `role_and_menu` (`menu_id`, `role_id`)
+VALUES (@p74, @p75);
+SELECT `id`
+FROM `role_and_menu`
+WHERE ROW_COUNT() = 1 AND `id` = LAST_INSERT_ID();
+
+INSERT INTO `role_and_menu` (`menu_id`, `role_id`)
+VALUES (@p76, @p77);
+SELECT `id`
+FROM `role_and_menu`
+WHERE ROW_COUNT() = 1 AND `id` = LAST_INSERT_ID();
+
+INSERT INTO `role_and_menu` (`menu_id`, `role_id`)
+VALUES (@p78, @p79);
+SELECT `id`
+FROM `role_and_menu`
+WHERE ROW_COUNT() = 1 AND `id` = LAST_INSERT_ID();
+
+INSERT INTO `role_and_menu` (`menu_id`, `role_id`)
+VALUES (@p80, @p81);
+SELECT `id`
+FROM `role_and_menu`
+WHERE ROW_COUNT() = 1 AND `id` = LAST_INSERT_ID();
+
+2019-09-02 11:23:06,138 [16] DEBUG logger - Executed DbCommand (117ms) [Parameters=[@__8__locals1_request_Id_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SELECT `c`.`id`, `c`.`add_time`, `c`.`folder`, `c`.`icon`, `c`.`is_insidepages`, `c`.`is_menu`, `c`.`menu_key`, `c`.`name`, `c`.`parent_id`, `c`.`router`, `c`.`sort_id`, `c`.`status`, `c`.`update_time`, `c`.`view_name`, `c`.`view_url`
+FROM `menu` AS `c`
+WHERE `c`.`id` = @__8__locals1_request_Id_0
+LIMIT 1
+
+2019-09-02 11:23:06,439 [16] DEBUG logger - Executed DbCommand (1ms) [Parameters=[@__menuInfo_ParentId_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SELECT `c`.`id`, `c`.`add_time`, `c`.`folder`, `c`.`icon`, `c`.`is_insidepages`, `c`.`is_menu`, `c`.`menu_key`, `c`.`name`, `c`.`parent_id`, `c`.`router`, `c`.`sort_id`, `c`.`status`, `c`.`update_time`, `c`.`view_name`, `c`.`view_url`
+FROM `menu` AS `c`
+WHERE `c`.`parent_id` = @__menuInfo_ParentId_0
+ORDER BY `c`.`sort_id`
+
+2019-09-02 11:23:57,099 [16] DEBUG logger - Executed DbCommand (184ms) [Parameters=[@__8__locals1_request_Id_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SELECT `c`.`id`, `c`.`add_time`, `c`.`folder`, `c`.`icon`, `c`.`is_insidepages`, `c`.`is_menu`, `c`.`menu_key`, `c`.`name`, `c`.`parent_id`, `c`.`router`, `c`.`sort_id`, `c`.`status`, `c`.`update_time`, `c`.`view_name`, `c`.`view_url`
+FROM `menu` AS `c`
+WHERE `c`.`id` = @__8__locals1_request_Id_0
+LIMIT 1
+
+2019-09-02 11:24:01,085 [16] DEBUG logger - Executed DbCommand (2ms) [Parameters=[@__menuInfo_ParentId_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SELECT `c`.`id`, `c`.`add_time`, `c`.`folder`, `c`.`icon`, `c`.`is_insidepages`, `c`.`is_menu`, `c`.`menu_key`, `c`.`name`, `c`.`parent_id`, `c`.`router`, `c`.`sort_id`, `c`.`status`, `c`.`update_time`, `c`.`view_name`, `c`.`view_url`
+FROM `menu` AS `c`
+WHERE `c`.`parent_id` = @__menuInfo_ParentId_0
+ORDER BY `c`.`sort_id`
+
+2019-09-02 11:25:03,575 [16] DEBUG logger - Executed DbCommand (149ms) [Parameters=[@__8__locals1_request_Id_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SELECT `c`.`id`, `c`.`add_time`, `c`.`folder`, `c`.`icon`, `c`.`is_insidepages`, `c`.`is_menu`, `c`.`menu_key`, `c`.`name`, `c`.`parent_id`, `c`.`router`, `c`.`sort_id`, `c`.`status`, `c`.`update_time`, `c`.`view_name`, `c`.`view_url`
+FROM `menu` AS `c`
+WHERE `c`.`id` = @__8__locals1_request_Id_0
+LIMIT 1
+
+2019-09-02 11:25:03,942 [16] DEBUG logger - Executed DbCommand (2ms) [Parameters=[@__menuInfo_ParentId_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SELECT `c`.`id`, `c`.`add_time`, `c`.`folder`, `c`.`icon`, `c`.`is_insidepages`, `c`.`is_menu`, `c`.`menu_key`, `c`.`name`, `c`.`parent_id`, `c`.`router`, `c`.`sort_id`, `c`.`status`, `c`.`update_time`, `c`.`view_name`, `c`.`view_url`
+FROM `menu` AS `c`
+WHERE `c`.`parent_id` = @__menuInfo_ParentId_0
+ORDER BY `c`.`sort_id`
+
+2019-09-02 11:27:27,351 [16] DEBUG logger - Executed DbCommand (145ms) [Parameters=[@__8__locals1_request_Id_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SELECT `c`.`id`, `c`.`add_time`, `c`.`folder`, `c`.`icon`, `c`.`is_insidepages`, `c`.`is_menu`, `c`.`menu_key`, `c`.`name`, `c`.`parent_id`, `c`.`router`, `c`.`sort_id`, `c`.`status`, `c`.`update_time`, `c`.`view_name`, `c`.`view_url`
+FROM `menu` AS `c`
+WHERE `c`.`id` = @__8__locals1_request_Id_0
+LIMIT 1
+
+2019-09-02 11:27:31,320 [16] DEBUG logger - Executed DbCommand (2ms) [Parameters=[@__menuInfo_ParentId_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SELECT `c`.`id`, `c`.`add_time`, `c`.`folder`, `c`.`icon`, `c`.`is_insidepages`, `c`.`is_menu`, `c`.`menu_key`, `c`.`name`, `c`.`parent_id`, `c`.`router`, `c`.`sort_id`, `c`.`status`, `c`.`update_time`, `c`.`view_name`, `c`.`view_url`
+FROM `menu` AS `c`
+WHERE `c`.`parent_id` = @__menuInfo_ParentId_0
+ORDER BY `c`.`sort_id`
+
+2019-09-02 11:28:35,399 [16] DEBUG logger - Executed DbCommand (104ms) [Parameters=[@__8__locals1_request_Id_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SELECT `c`.`id`, `c`.`add_time`, `c`.`folder`, `c`.`icon`, `c`.`is_insidepages`, `c`.`is_menu`, `c`.`menu_key`, `c`.`name`, `c`.`parent_id`, `c`.`router`, `c`.`sort_id`, `c`.`status`, `c`.`update_time`, `c`.`view_name`, `c`.`view_url`
+FROM `menu` AS `c`
+WHERE `c`.`id` = @__8__locals1_request_Id_0
+LIMIT 1
+
+2019-09-02 11:28:35,682 [16] DEBUG logger - Executed DbCommand (2ms) [Parameters=[@__menuInfo_ParentId_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SELECT `c`.`id`, `c`.`add_time`, `c`.`folder`, `c`.`icon`, `c`.`is_insidepages`, `c`.`is_menu`, `c`.`menu_key`, `c`.`name`, `c`.`parent_id`, `c`.`router`, `c`.`sort_id`, `c`.`status`, `c`.`update_time`, `c`.`view_name`, `c`.`view_url`
+FROM `menu` AS `c`
+WHERE `c`.`parent_id` = @__menuInfo_ParentId_0
+ORDER BY `c`.`sort_id`
+
+2019-09-02 11:29:28,743 [15] DEBUG logger - Executed DbCommand (136ms) [Parameters=[@__8__locals1_request_Id_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SELECT `c`.`id`, `c`.`add_time`, `c`.`folder`, `c`.`icon`, `c`.`is_insidepages`, `c`.`is_menu`, `c`.`menu_key`, `c`.`name`, `c`.`parent_id`, `c`.`router`, `c`.`sort_id`, `c`.`status`, `c`.`update_time`, `c`.`view_name`, `c`.`view_url`
+FROM `menu` AS `c`
+WHERE `c`.`id` = @__8__locals1_request_Id_0
+LIMIT 1
+
+2019-09-02 11:29:29,134 [15] DEBUG logger - Executed DbCommand (2ms) [Parameters=[@__menuInfo_ParentId_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SELECT `c`.`id`, `c`.`add_time`, `c`.`folder`, `c`.`icon`, `c`.`is_insidepages`, `c`.`is_menu`, `c`.`menu_key`, `c`.`name`, `c`.`parent_id`, `c`.`router`, `c`.`sort_id`, `c`.`status`, `c`.`update_time`, `c`.`view_name`, `c`.`view_url`
+FROM `menu` AS `c`
+WHERE `c`.`parent_id` = @__menuInfo_ParentId_0
+ORDER BY `c`.`sort_id`
+
+2019-09-02 11:29:29,438 [15] DEBUG logger - Executed DbCommand (2ms) [Parameters=[@p1='?' (DbType = Int32), @p0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+UPDATE `menu` SET `sort_id` = @p0
+WHERE `id` = @p1;
+SELECT ROW_COUNT();
+
+2019-09-02 11:30:27,783 [15] DEBUG logger - Executed DbCommand (131ms) [Parameters=[@__8__locals1_request_Id_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SELECT `c`.`id`, `c`.`add_time`, `c`.`folder`, `c`.`icon`, `c`.`is_insidepages`, `c`.`is_menu`, `c`.`menu_key`, `c`.`name`, `c`.`parent_id`, `c`.`router`, `c`.`sort_id`, `c`.`status`, `c`.`update_time`, `c`.`view_name`, `c`.`view_url`
+FROM `menu` AS `c`
+WHERE `c`.`id` = @__8__locals1_request_Id_0
+LIMIT 1
+
+2019-09-02 11:30:28,196 [15] DEBUG logger - Executed DbCommand (2ms) [Parameters=[@__menuInfo_ParentId_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SELECT `c`.`id`, `c`.`add_time`, `c`.`folder`, `c`.`icon`, `c`.`is_insidepages`, `c`.`is_menu`, `c`.`menu_key`, `c`.`name`, `c`.`parent_id`, `c`.`router`, `c`.`sort_id`, `c`.`status`, `c`.`update_time`, `c`.`view_name`, `c`.`view_url`
+FROM `menu` AS `c`
+WHERE `c`.`parent_id` = @__menuInfo_ParentId_0
+ORDER BY `c`.`sort_id`
+
+2019-09-02 11:30:28,552 [15] DEBUG logger - Executed DbCommand (1ms) [Parameters=[@p1='?' (DbType = Int32), @p0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+UPDATE `menu` SET `sort_id` = @p0
+WHERE `id` = @p1;
+SELECT ROW_COUNT();
+
+2019-09-02 11:31:49,144 [15] DEBUG logger - Executed DbCommand (306ms) [Parameters=[@__8__locals1_request_Id_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SELECT `c`.`id`, `c`.`add_time`, `c`.`folder`, `c`.`icon`, `c`.`is_insidepages`, `c`.`is_menu`, `c`.`menu_key`, `c`.`name`, `c`.`parent_id`, `c`.`router`, `c`.`sort_id`, `c`.`status`, `c`.`update_time`, `c`.`view_name`, `c`.`view_url`
+FROM `menu` AS `c`
+WHERE `c`.`id` = @__8__locals1_request_Id_0
+LIMIT 1
+
+2019-09-02 11:31:49,739 [15] DEBUG logger - Executed DbCommand (2ms) [Parameters=[@__menuInfo_ParentId_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SELECT `c`.`id`, `c`.`add_time`, `c`.`folder`, `c`.`icon`, `c`.`is_insidepages`, `c`.`is_menu`, `c`.`menu_key`, `c`.`name`, `c`.`parent_id`, `c`.`router`, `c`.`sort_id`, `c`.`status`, `c`.`update_time`, `c`.`view_name`, `c`.`view_url`
+FROM `menu` AS `c`
+WHERE `c`.`parent_id` = @__menuInfo_ParentId_0
+ORDER BY `c`.`sort_id`
+
+2019-09-02 11:31:50,082 [15] DEBUG logger - Executed DbCommand (2ms) [Parameters=[@p1='?' (DbType = Int32), @p0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+UPDATE `menu` SET `sort_id` = @p0
+WHERE `id` = @p1;
+SELECT ROW_COUNT();
+
+2019-09-02 11:32:43,618 [16] DEBUG logger - Executed DbCommand (166ms) [Parameters=[@__8__locals1_request_Id_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SELECT `c`.`id`, `c`.`add_time`, `c`.`folder`, `c`.`icon`, `c`.`is_insidepages`, `c`.`is_menu`, `c`.`menu_key`, `c`.`name`, `c`.`parent_id`, `c`.`router`, `c`.`sort_id`, `c`.`status`, `c`.`update_time`, `c`.`view_name`, `c`.`view_url`
+FROM `menu` AS `c`
+WHERE `c`.`id` = @__8__locals1_request_Id_0
+LIMIT 1
+
+2019-09-02 11:32:47,423 [16] DEBUG logger - Executed DbCommand (2ms) [Parameters=[@__menuInfo_ParentId_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SELECT `c`.`id`, `c`.`add_time`, `c`.`folder`, `c`.`icon`, `c`.`is_insidepages`, `c`.`is_menu`, `c`.`menu_key`, `c`.`name`, `c`.`parent_id`, `c`.`router`, `c`.`sort_id`, `c`.`status`, `c`.`update_time`, `c`.`view_name`, `c`.`view_url`
+FROM `menu` AS `c`
+WHERE `c`.`parent_id` = @__menuInfo_ParentId_0
+ORDER BY `c`.`sort_id`
+
+2019-09-02 11:36:57,832 [15] DEBUG logger - Executed DbCommand (148ms) [Parameters=[@__8__locals1_request_Id_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SELECT `c`.`id`, `c`.`add_time`, `c`.`folder`, `c`.`icon`, `c`.`is_insidepages`, `c`.`is_menu`, `c`.`menu_key`, `c`.`name`, `c`.`parent_id`, `c`.`router`, `c`.`sort_id`, `c`.`status`, `c`.`update_time`, `c`.`view_name`, `c`.`view_url`
+FROM `menu` AS `c`
+WHERE `c`.`id` = @__8__locals1_request_Id_0
+LIMIT 1
+
+2019-09-02 11:36:58,199 [15] DEBUG logger - Executed DbCommand (1ms) [Parameters=[@__menuInfo_ParentId_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SELECT `c`.`id`, `c`.`add_time`, `c`.`folder`, `c`.`icon`, `c`.`is_insidepages`, `c`.`is_menu`, `c`.`menu_key`, `c`.`name`, `c`.`parent_id`, `c`.`router`, `c`.`sort_id`, `c`.`status`, `c`.`update_time`, `c`.`view_name`, `c`.`view_url`
+FROM `menu` AS `c`
+WHERE `c`.`parent_id` = @__menuInfo_ParentId_0
+ORDER BY `c`.`sort_id`
+
+2019-09-02 11:36:58,482 [15] DEBUG logger - Executed DbCommand (2ms) [Parameters=[@p1='?' (DbType = Int32), @p0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+UPDATE `menu` SET `sort_id` = @p0
+WHERE `id` = @p1;
+SELECT ROW_COUNT();
+
+2019-09-02 11:36:58,492 [15] DEBUG logger - Executed DbCommand (1ms) [Parameters=[@p1='?' (DbType = Int32), @p0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+UPDATE `menu` SET `sort_id` = @p0
+WHERE `id` = @p1;
+SELECT ROW_COUNT();
+

@@ -1,0 +1,3203 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>UserService</name>
+    </assembly>
+    <members>
+        <member name="T:UserService.Common.Common">
+            <summary>
+            公共类
+            </summary>
+        </member>
+        <member name="P:UserService.Common.Common.Configuration">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:UserService.Common.Common.FILE">
+            <summary>
+            文件服务
+            </summary>
+        </member>
+        <member name="F:UserService.Common.Common.GETFILE">
+            <summary>
+            获取文件
+            </summary>
+        </member>
+        <member name="M:UserService.Common.Common.ReadExcel(System.Int32,System.String)">
+            <summary>
+            读取Excel
+            </summary>
+            <param name="FileId"></param>
+            <param name="apiUrl"></param>
+            <returns></returns>
+        </member>
+        <member name="M:UserService.Common.Common.ExportStudent(System.Collections.Generic.List{UserService.Models.ExportStudentModel},System.String)">
+            <summary>
+            导出学生
+            </summary>
+            <param name="list"></param>
+            <param name="title"></param>
+            <returns></returns>
+        </member>
+        <member name="M:UserService.Common.Common.ExportTeacher(System.Collections.Generic.List{UserService.Models.ExportTeacherModel},System.String)">
+            <summary>
+            导出教师
+            </summary>
+            <param name="list"></param>
+            <param name="title"></param>
+            <returns></returns>
+        </member>
+        <member name="M:UserService.Common.Common.BasicStyles(NPOI.SS.UserModel.ICellStyle)">
+            <summary>
+            基本样式设置
+            </summary>
+            <param name="cellStyle"></param>
+            <returns></returns>
+        </member>
+        <member name="M:UserService.Common.Common.Title(System.Int32,NPOI.SS.UserModel.ISheet,System.String,NPOI.XSSF.UserModel.XSSFWorkbook,System.Boolean,System.Int32)">
+            <summary>
+            标题
+            </summary>
+        </member>
+        <member name="M:UserService.Common.Common.DataList(System.Data.DataTable,System.Collections.Generic.List{System.String},NPOI.SS.UserModel.ISheet,NPOI.XSSF.UserModel.XSSFWorkbook,System.Int32)">
+            <summary>
+            表头
+            </summary>
+            <param name="dataTable"></param>
+            <param name="TableHead"></param>
+            <param name="sheet"></param>
+            <param name="xssfworkbook"></param>
+            <param name="mergeCount"></param>
+        </member>
+        <member name="M:UserService.Common.Common.TraverseStyle(System.Int32,NPOI.SS.UserModel.IRow,NPOI.SS.UserModel.ICellStyle)">
+            <summary>
+            给每个单元添加样式
+            </summary>
+            <param name="num"></param>
+            <param name="row"></param>
+            <param name="cellStyle"></param>
+        </member>
+        <member name="M:UserService.Common.Common.ColumnWidth(System.Int32,System.Int32,System.Int32,NPOI.SS.UserModel.ISheet)">
+            <summary>
+            设置每列宽度
+            </summary>
+            <param name="startNum">开始列</param>
+            <param name="endNum">结束列</param>
+            <param name="value">宽度值</param>
+            <param name="sheet"></param>
+        </member>
+        <member name="M:UserService.Common.Common.ExportUrl(NPOI.XSSF.UserModel.XSSFWorkbook,System.String,System.String)">
+            <summary>
+            保存Excel文件返回文件ID
+            </summary>
+            <param name="xssfworkbook"></param>
+            <param name="name"></param>
+            <param name="format"></param>
+            <returns></returns>
+        </member>
+        <member name="T:UserService.Common.Models.FileModel">
+            <summary>
+            文件类
+            </summary>
+        </member>
+        <member name="P:UserService.Common.Models.FileModel.FileId">
+            <summary>
+            文件ID
+            </summary>
+        </member>
+        <member name="T:UserService.DataModel.Menu">
+            <summary>
+            权限表
+            </summary>
+        </member>
+        <member name="P:UserService.DataModel.Menu.Id">
+            <summary>
+            主键 ID
+            </summary>
+        </member>
+        <member name="P:UserService.DataModel.Menu.Name">
+             <summary>
+            名称
+             </summary>
+        </member>
+        <member name="P:UserService.DataModel.Menu.MenuKey">
+            <summary>
+            key
+            </summary>
+        </member>
+        <member name="P:UserService.DataModel.Menu.Icon">
+            <summary>
+            icon
+            </summary>
+        </member>
+        <member name="P:UserService.DataModel.Menu.Router">
+            <summary>
+            路由 Path
+            </summary>
+        </member>
+        <member name="P:UserService.DataModel.Menu.ViewUrl">
+            <summary>
+            页面地址 component
+            </summary>
+        </member>
+        <member name="P:UserService.DataModel.Menu.Folder">
+            <summary>
+            文件夹
+            </summary>
+        </member>
+        <member name="P:UserService.DataModel.Menu.ViewName">
+             <summary>
+            页面名称 Name
+             </summary>
+        </member>
+        <member name="P:UserService.DataModel.Menu.ParentId">
+             <summary>
+            父级别ID
+             </summary>
+        </member>
+        <member name="P:UserService.DataModel.Menu.IsMenu">
+            <summary>
+            是否菜单
+            </summary>
+        </member>
+        <member name="P:UserService.DataModel.Menu.IsInsidePages">
+            <summary>
+            是否内页
+            </summary>
+        </member>
+        <member name="P:UserService.DataModel.Menu.SortId">
+            <summary>
+            排序
+            </summary>
+        </member>
+        <member name="P:UserService.DataModel.Menu.UpdateTime">
+            <summary>
+            更新时间
+            </summary>
+        </member>
+        <member name="P:UserService.DataModel.Menu.AddTime">
+            <summary>
+            添加时间
+            </summary>
+        </member>
+        <member name="P:UserService.DataModel.Menu.Status">
+            <summary>
+            状态
+            </summary>
+        </member>
+        <member name="T:UserService.DataModel.Role">
+            <summary>
+            权限表
+            </summary>
+        </member>
+        <member name="P:UserService.DataModel.Role.Id">
+            <summary>
+            Id
+            </summary>
+        </member>
+        <member name="P:UserService.DataModel.Role.Name">
+            <summary>
+            名称
+            </summary>
+        </member>
+        <member name="P:UserService.DataModel.Role.Status">
+            <summary>
+            状态
+            </summary>
+        </member>
+        <member name="P:UserService.DataModel.Role.RoleName">
+            <summary>
+            权限
+            </summary>
+        </member>
+        <member name="T:UserService.DataModel.RoleAndMenu">
+            <summary>
+            用户权限
+            </summary>
+        </member>
+        <member name="P:UserService.DataModel.RoleAndMenu.Id">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:UserService.DataModel.RoleAndMenu.MenuId">
+            <summary>
+            用户ID
+            </summary>
+        </member>
+        <member name="P:UserService.DataModel.RoleAndMenu.RoleId">
+            <summary>
+            权限ID
+            </summary>
+        </member>
+        <member name="P:UserService.DataModel.RoleAndMenu.User">
+            <summary>
+            关联表
+            </summary>
+        </member>
+        <member name="P:UserService.DataModel.RoleAndMenu.Role">
+            <summary>
+            关联表
+            </summary>
+        </member>
+        <member name="T:UserService.DataModel.Student">
+            <summary>
+            学生表
+            </summary>
+        </member>
+        <member name="P:UserService.DataModel.Student.Id">
+            <summary>
+            主键
+            </summary>
+        </member>
+        <member name="P:UserService.DataModel.Student.StudentNo">
+            <summary>
+            学生编号
+            </summary>
+        </member>
+        <member name="P:UserService.DataModel.Student.GradeId">
+            <summary>
+            年级ID
+            </summary>
+        </member>
+        <member name="P:UserService.DataModel.Student.ClassId">
+            <summary>
+            班级 ID
+            </summary>
+        </member>
+        <member name="P:UserService.DataModel.Student.UserAndStudent">
+            <summary>
+            学生与用户关联表
+            </summary>
+        </member>
+        <member name="T:UserService.DataModel.Subject">
+            <summary>
+            权限表
+            </summary>
+        </member>
+        <member name="P:UserService.DataModel.Subject.Id">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:UserService.DataModel.Subject.Name">
+            <summary>
+            年级ID
+            </summary>
+        </member>
+        <member name="P:UserService.DataModel.Subject.Update_Time">
+            <summary>
+            年级ID
+            </summary>
+        </member>
+        <member name="P:UserService.DataModel.Subject.Add_Time">
+            <summary>
+            年级ID
+            </summary>
+        </member>
+        <member name="P:UserService.DataModel.Subject.Status">
+            <summary>
+            年级ID
+            </summary>
+        </member>
+        <member name="T:UserService.DataModel.Teacher">
+            <summary>
+            教师表
+            </summary>
+        </member>
+        <member name="P:UserService.DataModel.Teacher.Id">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:UserService.DataModel.Teacher.SubjectId">
+            <summary>
+            年级ID
+            </summary>
+        </member>
+        <member name="P:UserService.DataModel.Teacher.UserAndTeacher">
+            <summary>
+            教师与用户关联表
+            </summary>
+        </member>
+        <member name="P:UserService.DataModel.Teacher.TeacherAndGrade">
+            <summary>
+            教师与年级关联表
+            </summary>
+        </member>
+        <member name="P:UserService.DataModel.Teacher.TeacherAndClass">
+            <summary>
+            教师与班级关联表
+            </summary>
+        </member>
+        <member name="T:UserService.DataModel.TeacherAndClass">
+            <summary>
+            教师表
+            </summary>
+        </member>
+        <member name="P:UserService.DataModel.TeacherAndClass.Id">
+            <summary>
+            管理ID
+            </summary>
+        </member>
+        <member name="P:UserService.DataModel.TeacherAndClass.ClassId">
+            <summary>
+            班级ID
+            </summary>
+        </member>
+        <member name="P:UserService.DataModel.TeacherAndClass.GradeId">
+            <summary>
+            班级ID
+            </summary>
+        </member>
+        <member name="P:UserService.DataModel.TeacherAndClass.TeacherId">
+            <summary>
+            教师ID
+            </summary>
+        </member>
+        <member name="P:UserService.DataModel.TeacherAndClass.Teacher">
+            <summary>
+            关联表
+            </summary>
+        </member>
+        <member name="P:UserService.DataModel.TeacherAndClass.Update_Time">
+            <summary>
+            更新时间
+            </summary>
+        </member>
+        <member name="P:UserService.DataModel.TeacherAndClass.Add_Time">
+            <summary>
+            添加时间
+            </summary>
+        </member>
+        <member name="P:UserService.DataModel.TeacherAndClass.Status">
+            <summary>
+            状态
+            </summary>
+        </member>
+        <member name="T:UserService.DataModel.TeacherAndGreade">
+            <summary>
+            教师与班级管理表
+            </summary>
+        </member>
+        <member name="P:UserService.DataModel.TeacherAndGreade.Id">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:UserService.DataModel.TeacherAndGreade.GreadeId">
+            <summary>
+            用户ID
+            </summary>
+        </member>
+        <member name="P:UserService.DataModel.TeacherAndGreade.TeacherId">
+            <summary>
+            教师ID
+            </summary>
+        </member>
+        <member name="P:UserService.DataModel.TeacherAndGreade.Teacher">
+            <summary>
+            关联表
+            </summary>
+        </member>
+        <member name="P:UserService.DataModel.TeacherAndGreade.Update_Time">
+            <summary>
+            更新时间
+            </summary>
+        </member>
+        <member name="P:UserService.DataModel.TeacherAndGreade.Add_Time">
+            <summary>
+            添加时间
+            </summary>
+        </member>
+        <member name="P:UserService.DataModel.TeacherAndGreade.Status">
+            <summary>
+            状态
+            </summary>
+        </member>
+        <member name="T:UserService.DataModel.User">
+            <summary>
+            用户 表
+            </summary>
+        </member>
+        <member name="P:UserService.DataModel.User.Id">
+            <summary>
+            ID
+            </summary>
+        </member>
+        <member name="P:UserService.DataModel.User.Login_Name">
+            <summary>
+            登录名
+            </summary>
+        </member>
+        <member name="P:UserService.DataModel.User.Login_Password">
+            <summary>
+            登录密码
+            </summary>
+        </member>
+        <member name="P:UserService.DataModel.User.Avatar">
+            <summary>
+            头像(FileId)
+            </summary>
+        </member>
+        <member name="P:UserService.DataModel.User.School_Id">
+            <summary>
+            学校 ID
+            </summary>
+        </member>
+        <member name="P:UserService.DataModel.User.User_Name">
+            <summary>
+            用户名
+            </summary>
+        </member>
+        <member name="P:UserService.DataModel.User.Gender">
+            <summary>
+            性别
+            </summary>
+        </member>
+        <member name="P:UserService.DataModel.User.Phone">
+            <summary>
+            手机号
+            </summary>
+        </member>
+        <member name="P:UserService.DataModel.User.Update_Time">
+            <summary>
+            更新时间
+            </summary>
+        </member>
+        <member name="P:UserService.DataModel.User.Add_Time">
+            <summary>
+            添加时间
+            </summary>
+        </member>
+        <member name="P:UserService.DataModel.User.Client_Id">
+            <summary>
+            客户端 ID
+            </summary>
+        </member>
+        <member name="P:UserService.DataModel.User.Status">
+            <summary>
+            状态
+            </summary>
+        </member>
+        <member name="P:UserService.DataModel.User.UserRole">
+            <summary>
+            关联权限表
+            </summary>
+        </member>
+        <member name="P:UserService.DataModel.User.UserAndStudent">
+            <summary>
+            关联学生表
+            </summary>
+        </member>
+        <member name="P:UserService.DataModel.User.UserAndTeacher">
+            <summary>
+            关联教师表
+            </summary>
+        </member>
+        <member name="T:UserService.DataModel.UserAndRole">
+            <summary>
+            用户权限
+            </summary>
+        </member>
+        <member name="P:UserService.DataModel.UserAndRole.Id">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:UserService.DataModel.UserAndRole.UserId">
+            <summary>
+            用户ID
+            </summary>
+        </member>
+        <member name="P:UserService.DataModel.UserAndRole.RoleId">
+            <summary>
+            权限ID
+            </summary>
+        </member>
+        <member name="P:UserService.DataModel.UserAndRole.User">
+            <summary>
+            关联表
+            </summary>
+        </member>
+        <member name="P:UserService.DataModel.UserAndRole.Role">
+            <summary>
+            关联表
+            </summary>
+        </member>
+        <member name="T:UserService.DataModel.UserAndStudent">
+            <summary>
+            学生中间表
+            </summary>
+        </member>
+        <member name="P:UserService.DataModel.UserAndStudent.Id">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:UserService.DataModel.UserAndStudent.UserId">
+            <summary>
+            用户ID
+            </summary>
+        </member>
+        <member name="P:UserService.DataModel.UserAndStudent.StudentId">
+            <summary>
+            学生ID
+            </summary>
+        </member>
+        <member name="P:UserService.DataModel.UserAndStudent.Student">
+            <summary>
+            关联表
+            </summary>
+        </member>
+        <member name="P:UserService.DataModel.UserAndStudent.User">
+            <summary>
+            关联表
+            </summary>
+        </member>
+        <member name="T:UserService.DataModel.UserAndTeacher">
+            <summary>
+            教师表
+            </summary>
+        </member>
+        <member name="P:UserService.DataModel.UserAndTeacher.Id">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:UserService.DataModel.UserAndTeacher.UserId">
+            <summary>
+            用户 ID
+            </summary>
+        </member>
+        <member name="P:UserService.DataModel.UserAndTeacher.TeacherId">
+            <summary>
+            教师ID
+            </summary>
+        </member>
+        <member name="P:UserService.DataModel.UserAndTeacher.Teacher">
+            <summary>
+            关联表
+            </summary>
+        </member>
+        <member name="P:UserService.DataModel.UserAndTeacher.User">
+            <summary>
+            关联表
+            </summary>
+        </member>
+        <member name="T:UserService.Models.ClassModel">
+            <summary>
+            班级
+            </summary>
+        </member>
+        <member name="P:UserService.Models.ClassModel.Id">
+            <summary>
+            /班级ID
+            </summary>
+        </member>
+        <member name="P:UserService.Models.ClassModel.GradeId">
+            <summary>
+            年级ID
+            </summary>
+        </member>
+        <member name="T:UserService.Models.DataListModel`1">
+            <summary>
+            ListModel
+            </summary>
+            <typeparam name="T"></typeparam>
+        </member>
+        <member name="P:UserService.Models.DataListModel`1.Data">
+            <summary>
+            数据集合
+            </summary>
+        </member>
+        <member name="P:UserService.Models.DataListModel`1.Total">
+            <summary>
+            总条数
+            </summary>
+        </member>
+        <member name="T:UserService.Models.Enums.GenderEnums">
+            <summary>
+            性别
+            </summary>
+        </member>
+        <member name="F:UserService.Models.Enums.GenderEnums.Male">
+            <summary>
+            男
+            </summary>
+        </member>
+        <member name="F:UserService.Models.Enums.GenderEnums.Female">
+            <summary>
+            女
+            </summary>
+        </member>
+        <member name="T:UserService.Models.Enums.RoleEnums">
+            <summary>
+            角色
+            </summary>
+        </member>
+        <member name="F:UserService.Models.Enums.RoleEnums.SysAdmin">
+            <summary>
+            超级管理员
+            </summary>
+        </member>
+        <member name="F:UserService.Models.Enums.RoleEnums.SchoolAdmin">
+            <summary>
+            学校管理员
+            </summary>
+        </member>
+        <member name="F:UserService.Models.Enums.RoleEnums.Teacher">
+            <summary>
+            教师
+            </summary>
+        </member>
+        <member name="F:UserService.Models.Enums.RoleEnums.Student">
+            <summary>
+            学生
+            </summary>
+        </member>
+        <member name="T:UserService.Models.Enums.StatusEnums">
+            <summary>
+            状态
+            </summary>
+        </member>
+        <member name="F:UserService.Models.Enums.StatusEnums.Normal">
+            <summary>
+            正常
+            </summary>
+        </member>
+        <member name="F:UserService.Models.Enums.StatusEnums.Delete">
+            <summary>
+            删除
+            </summary>
+        </member>
+        <member name="F:UserService.Models.Enums.StatusEnums.Abnormal">
+            <summary>
+            异常
+            </summary>
+        </member>
+        <member name="T:UserService.Models.ExportTeacherModel">
+            <summary>
+            教师
+            </summary>
+        </member>
+        <member name="P:UserService.Models.ExportTeacherModel.UserName">
+            <summary>
+            姓名
+            </summary>
+        </member>
+        <member name="P:UserService.Models.ExportTeacherModel.Gender">
+            <summary>
+            性别
+            </summary>
+        </member>
+        <member name="P:UserService.Models.ExportTeacherModel.LoginName">
+            <summary>
+            帐号
+            </summary>
+        </member>
+        <member name="P:UserService.Models.ExportTeacherModel.GradeName">
+            <summary>
+            年级
+            </summary>
+            
+        </member>
+        <member name="P:UserService.Models.ExportTeacherModel.ClassName">
+            <summary>
+            班级
+            </summary>
+        </member>
+        <member name="P:UserService.Models.ExportTeacherModel.SubjectName">
+            <summary>
+            学科
+            </summary>
+        </member>
+        <member name="P:UserService.Models.ExportTeacherModel.GradeIdList">
+            <summary>
+            年级ID
+            </summary>
+        </member>
+        <member name="P:UserService.Models.ExportTeacherModel.ClassIdList">
+            <summary>
+            班级ID
+            </summary>
+        </member>
+        <member name="T:UserService.Models.ExportStudentModel">
+            <summary>
+            导出学生
+            </summary>
+        </member>
+        <member name="P:UserService.Models.ExportStudentModel.UserName">
+            <summary>
+            姓名
+            </summary>
+        </member>
+        <member name="P:UserService.Models.ExportStudentModel.Gender">
+            <summary>
+            性别
+            </summary>
+        </member>
+        <member name="P:UserService.Models.ExportStudentModel.StudentNo">
+            <summary>
+            学生号
+            </summary>
+        </member>
+        <member name="P:UserService.Models.ExportStudentModel.GradeName">
+            <summary>
+            年纪ID
+            </summary>
+            
+        </member>
+        <member name="P:UserService.Models.ExportStudentModel.ClassName">
+            <summary>
+            班级ID
+            </summary>
+        </member>
+        <member name="T:UserService.Models.ImportModel">
+            <summary>
+            导入
+            </summary>
+        </member>
+        <member name="P:UserService.Models.ImportModel.Name">
+            <summary>
+            名称
+            </summary>
+        </member>
+        <member name="P:UserService.Models.ImportModel.TableList">
+            <summary>
+            集合
+            </summary>
+        </member>
+        <member name="T:UserService.Models.MataModel">
+            <summary>
+            描述
+            </summary>
+        </member>
+        <member name="P:UserService.Models.MataModel.title">
+            <summary>
+            title
+            </summary>
+        </member>
+        <member name="P:UserService.Models.MataModel.icon">
+             <summary>
+            icon
+             </summary>
+        </member>
+        <member name="T:UserService.Models.MenuModel">
+            <summary>
+            菜单
+            </summary>
+        </member>
+        <member name="P:UserService.Models.MenuModel.Id">
+            <summary>
+            主键 ID
+            </summary>
+        </member>
+        <member name="P:UserService.Models.MenuModel.Name">
+             <summary>
+            名称
+             </summary>
+        </member>
+        <member name="P:UserService.Models.MenuModel.MenuKey">
+            <summary>
+            key
+            </summary>
+        </member>
+        <member name="P:UserService.Models.MenuModel.Icon">
+            <summary>
+            icon
+            </summary>
+        </member>
+        <member name="P:UserService.Models.MenuModel.Router">
+            <summary>
+            路由 Path
+            </summary>
+        </member>
+        <member name="P:UserService.Models.MenuModel.IsInsidePages">
+            <summary>
+            是否内页
+            </summary>
+        </member>
+        <member name="P:UserService.Models.MenuModel.Folder">
+            <summary>
+            文件夹
+            </summary>
+        </member>
+        <member name="P:UserService.Models.MenuModel.ViewUrl">
+            <summary>
+            页面地址 component
+            </summary>
+        </member>
+        <member name="P:UserService.Models.MenuModel.ViewName">
+             <summary>
+            页面名称 Name
+             </summary>
+        </member>
+        <member name="P:UserService.Models.MenuModel.ParentId">
+             <summary>
+            父级别ID
+             </summary>
+        </member>
+        <member name="P:UserService.Models.MenuModel.IsMenu">
+            <summary>
+            是否菜单
+            </summary>
+        </member>
+        <member name="P:UserService.Models.MenuModel.SortId">
+            <summary>
+            排序
+            </summary>
+        </member>
+        <member name="P:UserService.Models.MenuModel.UpdateTime">
+            <summary>
+            更新时间
+            </summary>
+        </member>
+        <member name="P:UserService.Models.MenuModel.AddTime">
+            <summary>
+            添加时间
+            </summary>
+        </member>
+        <member name="P:UserService.Models.MenuModel.Status">
+            <summary>
+            状态
+            </summary>
+        </member>
+        <member name="P:UserService.Models.MenuModel.Children">
+            <summary>
+            自己节点
+            </summary>
+        </member>
+        <member name="T:UserService.Models.MenuTreeModel">
+            <summary>
+            菜单
+            </summary>
+        </member>
+        <member name="P:UserService.Models.MenuTreeModel.id">
+            <summary>
+            id
+            </summary>
+        </member>
+        <member name="P:UserService.Models.MenuTreeModel.path">
+            <summary>
+            path
+            </summary>
+        </member>
+        <member name="P:UserService.Models.MenuTreeModel.component">
+             <summary>
+            component: 
+             </summary>
+        </member>
+        <member name="P:UserService.Models.MenuTreeModel.redirect">
+            <summary>
+            redirect
+            </summary>
+        </member>
+        <member name="P:UserService.Models.MenuTreeModel.name">
+            <summary>
+            icon
+            </summary>
+        </member>
+        <member name="P:UserService.Models.MenuTreeModel.hidden">
+            <summary>
+            是否内页
+            </summary>
+        </member>
+        <member name="P:UserService.Models.MenuTreeModel.folder">
+            <summary>
+            文件夹
+            </summary>
+        </member>
+        <member name="P:UserService.Models.MenuTreeModel.meta">
+            <summary>
+            路由 Path
+            </summary>
+        </member>
+        <member name="P:UserService.Models.MenuTreeModel.children">
+            <summary>
+            自己节点
+            </summary>
+        </member>
+        <member name="T:UserService.Models.PageModel">
+            <summary>
+            分页
+            </summary>
+        </member>
+        <member name="P:UserService.Models.PageModel.Page">
+            <summary>
+            当前页
+            </summary>
+        </member>
+        <member name="P:UserService.Models.PageModel.Rows">
+            <summary>
+            每页条数
+            </summary>
+        </member>
+        <member name="P:UserService.Models.PageModel.IsPage">
+            <summary>
+            是否分页
+            </summary>
+        </member>
+        <member name="P:UserService.Models.PageModel.Seach">
+            <summary>
+            关键字
+            </summary>
+        </member>
+        <member name="P:UserService.Models.PageModel.SchoolId">
+            <summary>
+            学校ID
+            </summary>
+        </member>
+        <member name="T:UserService.Models.Result.ClassList">
+            <summary>
+            班级列表
+            </summary>
+        </member>
+        <member name="P:UserService.Models.Result.ClassList.Data">
+            <summary>
+            集合
+            </summary>
+        </member>
+        <member name="P:UserService.Models.Result.ClassList.Total">
+            <summary>
+            总数
+            </summary>
+        </member>
+        <member name="T:UserService.Models.Result.ClassInfo">
+            <summary>
+            班级信息
+            </summary>
+        </member>
+        <member name="P:UserService.Models.Result.ClassInfo.Id">
+            <summary>
+            ID
+            </summary>
+        </member>
+        <member name="P:UserService.Models.Result.ClassInfo.GradeId">
+            <summary>
+            年级 ID
+            </summary>
+        </member>
+        <member name="P:UserService.Models.Result.ClassInfo.ClassName">
+            <summary>
+            班级名称
+            </summary>
+        </member>
+        <member name="P:UserService.Models.Result.ClassInfo.UpdateTime">
+            <summary>
+            更新时间
+            </summary>
+        </member>
+        <member name="P:UserService.Models.Result.ClassInfo.AddTime">
+            <summary>
+            添加时间
+            </summary>
+        </member>
+        <member name="P:UserService.Models.Result.ClassInfo.Status">
+            <summary>
+            状态
+            </summary>
+        </member>
+        <member name="T:UserService.Models.Result.FileModel">
+             <summary>
+            文件
+             </summary>
+        </member>
+        <member name="P:UserService.Models.Result.FileModel.FileID">
+            <summary>
+            ID
+            
+            </summary>
+        </member>
+        <member name="P:UserService.Models.Result.FileModel.File">
+            <summary>
+            文件流
+            </summary>
+        </member>
+        <member name="P:UserService.Models.Result.FileModel.ContentType">
+            <summary>
+            文件类型
+            </summary>
+        </member>
+        <member name="P:UserService.Models.Result.FileModel.FileName">
+            <summary>
+            文件名
+            </summary>
+        </member>
+        <member name="T:UserService.Models.Result.GradeList">
+            <summary>
+            年级列表
+            </summary>
+        </member>
+        <member name="P:UserService.Models.Result.GradeList.Data">
+            <summary>
+            集合
+            </summary>
+        </member>
+        <member name="P:UserService.Models.Result.GradeList.Total">
+            <summary>
+            总数
+            </summary>
+        </member>
+        <member name="T:UserService.Models.Result.GradeInfo">
+            <summary>
+            年级
+            </summary>
+        </member>
+        <member name="P:UserService.Models.Result.GradeInfo.Id">
+            <summary>
+            ID
+            </summary>
+        </member>
+        <member name="P:UserService.Models.Result.GradeInfo.SchoolId">
+            <summary>
+            学校 ID
+            </summary>
+        </member>
+        <member name="P:UserService.Models.Result.GradeInfo.GradeName">
+            <summary>
+            班级名称
+            </summary>
+        </member>
+        <member name="P:UserService.Models.Result.GradeInfo.YearSegment">
+            <summary>
+            年段
+            </summary>
+        </member>
+        <member name="P:UserService.Models.Result.GradeInfo.UpdateTime">
+            <summary>
+            更新时间
+            </summary>
+        </member>
+        <member name="P:UserService.Models.Result.GradeInfo.AddTime">
+            <summary>
+            添加时间
+            </summary>
+        </member>
+        <member name="P:UserService.Models.Result.GradeInfo.Status">
+            <summary>
+            状态
+            </summary>
+        </member>
+        <member name="T:UserService.Models.Result.NameModel">
+            <summary>
+            获取名称
+            </summary>
+        </member>
+        <member name="P:UserService.Models.Result.NameModel.Names">
+            <summary>
+            名称
+            </summary>
+        </member>
+        <member name="T:UserService.Models.RoleModel">
+            <summary>
+            权限
+            </summary>
+        </member>
+        <member name="P:UserService.Models.RoleModel.Id">
+            <summary>
+            Id
+            </summary>
+        </member>
+        <!-- 对于成员“P:UserService.Models.RoleModel.Name”忽略有格式错误的 XML 注释 -->
+        <member name="P:UserService.Models.RoleModel.Status">
+            <summary>
+            状态
+            </summary>
+        </member>
+        <member name="P:UserService.Models.RoleModel.RoleName">
+            <summary>
+            权限
+            </summary>
+        </member>
+        <member name="T:UserService.Models.StudentModel">
+            <summary>
+            学生
+            </summary>
+        </member>
+        <member name="P:UserService.Models.StudentModel.Id">
+            <summary>
+            Id
+            </summary>
+        </member>
+        <member name="P:UserService.Models.StudentModel.LoginName">
+            <summary>
+            登录名
+            </summary>
+        </member>
+        <member name="P:UserService.Models.StudentModel.LoginPassword">
+            <summary>
+            登录密码
+            </summary>
+        </member>
+        <member name="P:UserService.Models.StudentModel.Avatar">
+            <summary>
+            头像(FileId)
+            </summary>
+        </member>
+        <member name="P:UserService.Models.StudentModel.SchoolId">
+            <summary>
+            学校ID 
+            </summary>
+        </member>
+        <member name="P:UserService.Models.StudentModel.UserName">
+            <summary>
+            姓名
+            </summary>
+        </member>
+        <member name="P:UserService.Models.StudentModel.Gender">
+            <summary>
+            性别
+            </summary>
+        </member>
+        <member name="P:UserService.Models.StudentModel.Phone">
+            <summary>
+            手机号
+            </summary>
+        </member>
+        <member name="P:UserService.Models.StudentModel.UpdateTime">
+            <summary>
+            更新时间
+            </summary>
+        </member>
+        <member name="P:UserService.Models.StudentModel.AddTime">
+            <summary>
+            添加时间
+            </summary>
+        </member>
+        <member name="P:UserService.Models.StudentModel.ClientId">
+            <summary>
+            接收ID
+            </summary>
+        </member>
+        <member name="P:UserService.Models.StudentModel.Status">
+            <summary>
+            状态
+            </summary>
+        </member>
+        <member name="P:UserService.Models.StudentModel.RoleId">
+            <summary>
+            角色ID
+            </summary>
+        </member>
+        <member name="P:UserService.Models.StudentModel.StudentNo">
+            <summary>
+            学生号
+            </summary>
+        </member>
+        <member name="P:UserService.Models.StudentModel.GradeId">
+            <summary>
+            年级ID
+            </summary>
+        </member>
+        <member name="P:UserService.Models.StudentModel.ClassId">
+            <summary>
+            班级ID
+            </summary>
+        </member>
+        <member name="P:UserService.Models.StudentModel.GradeName">
+            <summary>
+            年级Name
+            </summary>
+        </member>
+        <member name="P:UserService.Models.StudentModel.ClassName">
+            <summary>
+            班级Name
+            </summary>
+        </member>
+        <member name="T:UserService.Models.SubjectModel">
+            <summary>
+            教师学科
+            </summary>
+        </member>
+        <member name="P:UserService.Models.SubjectModel.Id">
+            <summary>
+            ID 
+            </summary>
+        </member>
+        <member name="P:UserService.Models.SubjectModel.Name">
+            <summary>
+            学科名称
+            </summary>
+        </member>
+        <member name="T:UserService.Models.TeacherModel">
+            <summary>
+            教师
+            </summary>
+        </member>
+        <member name="P:UserService.Models.TeacherModel.Id">
+            <summary>
+            Id
+            </summary>
+        </member>
+        <member name="P:UserService.Models.TeacherModel.TeacherId">
+            <summary>
+            教师ID关联使用
+            </summary>
+        </member>
+        <member name="P:UserService.Models.TeacherModel.LoginName">
+            <summary>
+            登录名
+            </summary>
+        </member>
+        <member name="P:UserService.Models.TeacherModel.LoginPassword">
+            <summary>
+            登录密码
+            </summary>
+        </member>
+        <member name="P:UserService.Models.TeacherModel.Avatar">
+            <summary>
+            头像(FileId)
+            </summary>
+        </member>
+        <member name="P:UserService.Models.TeacherModel.SchoolId">
+            <summary>
+            学校ID 
+            </summary>
+        </member>
+        <member name="P:UserService.Models.TeacherModel.UserName">
+            <summary>
+            姓名
+            </summary>
+        </member>
+        <member name="P:UserService.Models.TeacherModel.Gender">
+            <summary>
+            性别
+            </summary>
+        </member>
+        <member name="P:UserService.Models.TeacherModel.Phone">
+            <summary>
+            手机号
+            </summary>
+        </member>
+        <member name="P:UserService.Models.TeacherModel.UpdateTime">
+            <summary>
+            更新时间
+            </summary>
+        </member>
+        <member name="P:UserService.Models.TeacherModel.AddTime">
+            <summary>
+            添加时间
+            </summary>
+        </member>
+        <member name="P:UserService.Models.TeacherModel.ClientId">
+            <summary>
+            接收ID
+            </summary>
+        </member>
+        <member name="P:UserService.Models.TeacherModel.Status">
+            <summary>
+            状态
+            </summary>
+        </member>
+        <member name="P:UserService.Models.TeacherModel.RoleId">
+            <summary>
+            角色ID
+            </summary>
+        </member>
+        <member name="P:UserService.Models.TeacherModel.SubjectId">
+            <summary>
+            学科老师
+            </summary>
+        </member>
+        <member name="P:UserService.Models.TeacherModel.ClassList">
+            <summary>
+            班级列表
+            </summary>
+        </member>
+        <member name="P:UserService.Models.TeacherModel.ClassIdList">
+            <summary>
+            班级Id列表
+            </summary>
+        </member>
+        <member name="P:UserService.Models.TeacherModel.GreadeIdList">
+            <summary>
+            年级Id列表
+            </summary>
+        </member>
+        <member name="T:UserService.Models.UserModel">
+            <summary>
+            用户信息
+            </summary>
+        </member>
+        <member name="P:UserService.Models.UserModel.Id">
+            <summary>
+            Id
+            </summary>
+        </member>
+        <member name="P:UserService.Models.UserModel.LoginName">
+            <summary>
+            登录名
+            </summary>
+        </member>
+        <member name="P:UserService.Models.UserModel.LoginPassword">
+            <summary>
+            登录密码
+            </summary>
+        </member>
+        <member name="P:UserService.Models.UserModel.Avatar">
+            <summary>
+            头像(FileId)
+            </summary>
+        </member>
+        <member name="P:UserService.Models.UserModel.SchoolId">
+            <summary>
+            学校ID 
+            </summary>
+        </member>
+        <member name="P:UserService.Models.UserModel.UserName">
+            <summary>
+            姓名
+            </summary>
+        </member>
+        <member name="P:UserService.Models.UserModel.Gender">
+            <summary>
+            性别
+            </summary>
+        </member>
+        <member name="P:UserService.Models.UserModel.Phone">
+            <summary>
+            手机号
+            </summary>
+        </member>
+        <member name="P:UserService.Models.UserModel.UpdateTime">
+            <summary>
+            更新时间
+            </summary>
+        </member>
+        <member name="P:UserService.Models.UserModel.AddTime">
+            <summary>
+            添加时间
+            </summary>
+        </member>
+        <member name="P:UserService.Models.UserModel.ClientId">
+            <summary>
+            接收ID
+            </summary>
+        </member>
+        <member name="P:UserService.Models.UserModel.Status">
+            <summary>
+            状态
+            </summary>
+        </member>
+        <member name="P:UserService.Models.UserModel.RoleId">
+            <summary>
+            角色ID
+            </summary>
+        </member>
+        <member name="P:UserService.Models.UserModel.RoleCode">
+            <summary>
+            角色代码
+            </summary>
+            
+        </member>
+        <member name="P:UserService.Models.UserModel.RoleName">
+            <summary>
+            角色名称
+            </summary>
+            
+        </member>
+        <member name="P:UserService.Models.UserModel.RoleList">
+            <summary>
+            权限列表
+            </summary>
+        </member>
+        <member name="P:UserService.Models.UserModel.MenuTree">
+            <summary>
+            菜单列表
+            </summary>
+        </member>
+        <member name="P:UserService.Models.UserModel.btnPermissions">
+             <summary>
+            按钮权限
+             </summary>
+        </member>
+        <member name="T:UserService.Models.UserRoleModel">
+            <summary>
+            用户权限
+            </summary>
+        </member>
+        <member name="P:UserService.Models.UserRoleModel.UserId">
+            <summary>
+            用户ID
+            </summary>
+        </member>
+        <member name="P:UserService.Models.UserRoleModel.RoleId">
+            <summary>
+            权限ID
+            </summary>
+        </member>
+        <member name="T:UserService.Request.ExportRequest">
+            <summary>
+            导出
+            </summary>
+        </member>
+        <member name="P:UserService.Request.ExportRequest.Seach">
+            <summary>
+            关键字
+            </summary>
+        </member>
+        <member name="P:UserService.Request.ExportRequest.SchoolId">
+            <summary>
+            学校ID
+            </summary>
+        </member>
+        <member name="P:UserService.Request.ExportRequest.IdList">
+            <summary>
+            用户IDList
+            </summary>
+        </member>
+        <member name="P:UserService.Request.ExportRequest.GradeId">
+            <summary>
+            年级Id
+            </summary>
+        </member>
+        <member name="P:UserService.Request.ExportRequest.ClassId">
+            <summary>
+            班级ID
+            </summary>
+        </member>
+        <member name="P:UserService.Request.ExportRequest.GradeIdList">
+            <summary>
+            年级IdList
+            </summary>
+        </member>
+        <member name="P:UserService.Request.ExportRequest.ClassIdList">
+            <summary>
+            班级IDList
+            </summary>
+        </member>
+        <member name="T:UserService.Request.GetSubjectListRequest">
+            <summary>
+            获取教师学科列表
+            </summary>
+        </member>
+        <member name="T:UserService.Request.Student.ImportRequest">
+            <summary>
+            导入
+            </summary>
+        </member>
+        <member name="P:UserService.Request.Student.ImportRequest.FileId">
+             <summary>
+            文件ID
+             </summary>
+        </member>
+        <member name="P:UserService.Request.Student.ImportRequest.SchoolId">
+            <summary>
+            学校 ID
+            </summary>
+        </member>
+        <member name="T:UserService.Request.Student.AddStudentRequest">
+            <summary>
+            添加学生
+            </summary>
+        </member>
+        <member name="P:UserService.Request.Student.AddStudentRequest.Avatar">
+            <summary>
+            头像FileId
+            </summary>
+        </member>
+        <member name="P:UserService.Request.Student.AddStudentRequest.SchoolId">
+            <summary>
+            学校ID 
+            </summary>
+        </member>
+        <member name="P:UserService.Request.Student.AddStudentRequest.UserName">
+            <summary>
+            姓名
+            </summary>
+        </member>
+        <member name="P:UserService.Request.Student.AddStudentRequest.Gender">
+            <summary>
+            性别
+            </summary>
+        </member>
+        <member name="P:UserService.Request.Student.AddStudentRequest.Phone">
+            <summary>
+            手机号
+            </summary>
+        </member>
+        <member name="P:UserService.Request.Student.AddStudentRequest.StudentNo">
+             <summary>
+            学籍号
+             </summary>
+        </member>
+        <member name="P:UserService.Request.Student.AddStudentRequest.GradeId">
+            <summary>
+            年级ID
+            </summary>
+        </member>
+        <member name="P:UserService.Request.Student.AddStudentRequest.ClassId">
+            <summary>
+            班级ID
+            </summary>
+        </member>
+        <member name="T:UserService.Request.Student.DeleteStudentRequest">
+            <summary>
+            删除学生
+            </summary>
+        </member>
+        <member name="P:UserService.Request.Student.DeleteStudentRequest.Id">
+            <summary>
+            用户ID
+            </summary>
+        </member>
+        <member name="T:UserService.Request.Student.EditStudentRequest">
+            <summary>
+            编辑学生信息
+            </summary>
+        </member>
+        <member name="P:UserService.Request.Student.EditStudentRequest.Id">
+            <summary>
+            Id
+            </summary>
+        </member>
+        <member name="P:UserService.Request.Student.EditStudentRequest.Avatar">
+            <summary>
+            头像(FileId)
+            </summary>
+        </member>
+        <member name="P:UserService.Request.Student.EditStudentRequest.UserName">
+            <summary>
+            姓名
+            </summary>
+        </member>
+        <member name="P:UserService.Request.Student.EditStudentRequest.Gender">
+            <summary>
+            性别
+            </summary>
+        </member>
+        <member name="P:UserService.Request.Student.EditStudentRequest.Phone">
+            <summary>
+            手机号
+            </summary>
+        </member>
+        <member name="P:UserService.Request.Student.EditStudentRequest.StudentNo">
+            <summary>
+            学生号
+            </summary>
+        </member>
+        <member name="P:UserService.Request.Student.EditStudentRequest.GradeId">
+            <summary>
+            年纪ID
+            </summary>
+        </member>
+        <member name="P:UserService.Request.Student.EditStudentRequest.ClassId">
+            <summary>
+            班级ID
+            </summary>
+        </member>
+        <member name="T:UserService.Request.Student.GetStudentByIdRequest">
+            <summary>
+            根据ID获取学生信息
+            </summary>
+        </member>
+        <member name="P:UserService.Request.Student.GetStudentByIdRequest.Id">
+            <summary>
+            用户ID
+            </summary>
+        </member>
+        <member name="T:UserService.Request.Student.GetStudentListRequest">
+             <summary>
+            获取学生列表
+             </summary>
+        </member>
+        <member name="P:UserService.Request.Student.GetStudentListRequest.Page">
+            <summary>
+            当前页
+            </summary>
+        </member>
+        <member name="P:UserService.Request.Student.GetStudentListRequest.Rows">
+            <summary>
+            每页条数
+            </summary>
+        </member>
+        <member name="P:UserService.Request.Student.GetStudentListRequest.IsPage">
+            <summary>
+            是否分页 0 分页 1 不分页
+            </summary>
+        </member>
+        <member name="P:UserService.Request.Student.GetStudentListRequest.Seach">
+            <summary>
+            关键字
+            </summary>
+        </member>
+        <member name="P:UserService.Request.Student.GetStudentListRequest.SchoolId">
+            <summary>
+            学校ID
+            </summary>
+        </member>
+        <member name="P:UserService.Request.Student.GetStudentListRequest.IdList">
+            <summary>
+            根据学生ID集合获取学生信息
+            </summary>
+        </member>
+        <member name="P:UserService.Request.Student.GetStudentListRequest.GradeId">
+            <summary>
+            年级Id
+            </summary>
+        </member>
+        <member name="P:UserService.Request.Student.GetStudentListRequest.ClassId">
+            <summary>
+            班级ID
+            </summary>
+        </member>
+        <member name="P:UserService.Request.Student.GetStudentListRequest.GradeIdList">
+            <summary>
+            年级IdList
+            </summary>
+        </member>
+        <member name="P:UserService.Request.Student.GetStudentListRequest.ClassIdList">
+            <summary>
+            班级IDList
+            </summary>
+        </member>
+        <member name="T:UserService.Request.Student.GetStudentTreeListRequest">
+             <summary>
+            获取学生列表Tree
+             </summary>
+        </member>
+        <member name="P:UserService.Request.Student.GetStudentTreeListRequest.ClassIdList">
+            <summary>
+            班级IDList
+            </summary>
+        </member>
+        <member name="T:UserService.Request.LoginRequest">
+            <summary>
+            用户登录
+            </summary>
+        </member>
+        <member name="P:UserService.Request.LoginRequest.LoginName">
+            <summary>
+            登录名
+            </summary>
+        </member>
+        <member name="P:UserService.Request.LoginRequest.LoginPwd">
+            <summary>
+            登录密码
+            </summary>
+        </member>
+        <member name="T:UserService.Request.Menu.AddMenuRequest">
+            <summary>
+            新增菜单
+            </summary>
+        </member>
+        <member name="P:UserService.Request.Menu.AddMenuRequest.Name">
+             <summary>
+            名称
+             </summary>
+        </member>
+        <member name="P:UserService.Request.Menu.AddMenuRequest.MenuKey">
+            <summary>
+            key
+            </summary>
+        </member>
+        <member name="P:UserService.Request.Menu.AddMenuRequest.Icon">
+            <summary>
+            icon
+            </summary>
+        </member>
+        <member name="P:UserService.Request.Menu.AddMenuRequest.Router">
+            <summary>
+            路由
+            </summary>
+        </member>
+        <member name="P:UserService.Request.Menu.AddMenuRequest.Folder">
+            <summary>
+            文件夹
+            </summary>
+        </member>
+        <member name="P:UserService.Request.Menu.AddMenuRequest.IsInsidePages">
+            <summary>
+            是否内页
+            </summary>
+        </member>
+        <member name="P:UserService.Request.Menu.AddMenuRequest.ViewUrl">
+            <summary>
+            页面地址 component
+            </summary>
+        </member>
+        <member name="P:UserService.Request.Menu.AddMenuRequest.ViewName">
+             <summary>
+            页面名称 Name
+             </summary>
+        </member>
+        <member name="P:UserService.Request.Menu.AddMenuRequest.ParentId">
+             <summary>
+            父级别ID
+             </summary>
+        </member>
+        <member name="P:UserService.Request.Menu.AddMenuRequest.IsMenu">
+            <summary>
+            是否菜单
+            </summary>
+        </member>
+        <member name="P:UserService.Request.Menu.AddMenuRequest.SortId">
+            <summary>
+            排序
+            </summary>
+        </member>
+        <member name="T:UserService.Request.Menu.DeleteMenuRequest">
+            <summary>
+            删除菜单
+            </summary>
+        </member>
+        <member name="P:UserService.Request.Menu.DeleteMenuRequest.Id">
+            <summary>
+            ID
+            </summary>
+        </member>
+        <member name="T:UserService.Request.Menu.EditMenuRequest">
+            <summary>
+            编辑菜单
+            </summary>
+        </member>
+        <member name="P:UserService.Request.Menu.EditMenuRequest.Id">
+            <summary>
+            Id
+            </summary>
+        </member>
+        <member name="P:UserService.Request.Menu.EditMenuRequest.Name">
+             <summary>
+            名称
+             </summary>
+        </member>
+        <member name="P:UserService.Request.Menu.EditMenuRequest.MenuKey">
+            <summary>
+            key
+            </summary>
+        </member>
+        <member name="P:UserService.Request.Menu.EditMenuRequest.Icon">
+            <summary>
+            icon
+            </summary>
+        </member>
+        <member name="P:UserService.Request.Menu.EditMenuRequest.Router">
+            <summary>
+            路由
+            </summary>
+        </member>
+        <member name="P:UserService.Request.Menu.EditMenuRequest.IsInsidePages">
+            <summary>
+            是否内页
+            </summary>
+        </member>
+        <member name="P:UserService.Request.Menu.EditMenuRequest.Folder">
+            <summary>
+            文件夹
+            </summary>
+        </member>
+        <member name="P:UserService.Request.Menu.EditMenuRequest.ViewUrl">
+            <summary>
+            页面地址 component
+            </summary>
+        </member>
+        <member name="P:UserService.Request.Menu.EditMenuRequest.ViewName">
+             <summary>
+            页面名称 Name
+             </summary>
+        </member>
+        <member name="P:UserService.Request.Menu.EditMenuRequest.ParentId">
+             <summary>
+            父级别ID
+             </summary>
+        </member>
+        <member name="P:UserService.Request.Menu.EditMenuRequest.IsMenu">
+            <summary>
+            是否菜单
+            </summary>
+        </member>
+        <member name="P:UserService.Request.Menu.EditMenuRequest.SortId">
+            <summary>
+            排序
+            </summary>
+        </member>
+        <member name="T:UserService.Request.Menu.GetMenuByIdRequest">
+            <summary>
+            根据ID获取菜单信息
+            </summary>
+        </member>
+        <member name="P:UserService.Request.Menu.GetMenuByIdRequest.Id">
+            <summary>
+            用户ID
+            </summary>
+        </member>
+        <member name="T:UserService.Request.Menu.GetMenuListRequest">
+            <summary>
+            获取菜单列表
+            </summary>
+        </member>
+        <member name="P:UserService.Request.Menu.GetMenuListRequest.Page">
+            <summary>
+            当前页
+            </summary>
+        </member>
+        <member name="P:UserService.Request.Menu.GetMenuListRequest.Rows">
+            <summary>
+            每页条数
+            </summary>
+        </member>
+        <member name="P:UserService.Request.Menu.GetMenuListRequest.IsPage">
+            <summary>
+            是否分页 0 分页 1 不分页
+            </summary>
+        </member>
+        <member name="P:UserService.Request.Menu.GetMenuListRequest.Seach">
+            <summary>
+            关键字
+            </summary>
+        </member>
+        <member name="P:UserService.Request.Menu.GetMenuListRequest.ParentId">
+            <summary>
+            等于-1 时查询全部
+            </summary>
+        </member>
+        <member name="P:UserService.Request.Menu.GetMenuListRequest.IsMenu">
+            <summary>
+            0 全部  1 菜单   2 按钮
+            </summary>
+        </member>
+        <member name="T:UserService.Request.Menu.GetMenuTreeByRoleRequest">
+            <summary>
+            获取菜单列表
+            </summary>
+        </member>
+        <member name="P:UserService.Request.Menu.GetMenuTreeByRoleRequest.RoleId">
+             <summary>
+            角色ID
+             </summary>
+        </member>
+        <member name="T:UserService.Request.Menu.GetMenuTreeRequest">
+            <summary>
+            获取菜单列表
+            </summary>
+        </member>
+        <member name="P:UserService.Request.Menu.GetMenuTreeRequest.Seach">
+            <summary>
+            关键字
+            </summary>
+        </member>
+        <member name="P:UserService.Request.Menu.GetMenuTreeRequest.ParentId">
+            <summary>
+            等于-1 时查询全部
+            </summary>
+        </member>
+        <member name="P:UserService.Request.Menu.GetMenuTreeRequest.IsMenu">
+            <summary>
+            0 全部  1 菜单   2 按钮
+            </summary>
+        </member>
+        <member name="T:UserService.Request.Menu.RoleEmpowerRequest">
+             <summary>
+            角色授权
+             </summary>
+        </member>
+        <member name="P:UserService.Request.Menu.RoleEmpowerRequest.RoleId">
+            <summary>
+            角色ID
+            </summary>
+        </member>
+        <member name="P:UserService.Request.Menu.RoleEmpowerRequest.MenuId">
+            <summary>
+            菜单（权限ID）
+            </summary>
+        </member>
+        <member name="T:UserService.Request.Menu.UpdateMenuSortRequest">
+             <summary>
+            修改菜单状态
+             </summary>
+        </member>
+        <member name="P:UserService.Request.Menu.UpdateMenuSortRequest.Id">
+            <summary>
+            菜单ID
+            </summary>
+        </member>
+        <member name="P:UserService.Request.Menu.UpdateMenuSortRequest.Type">
+            <summary>
+            类型   0 下移 1 上移
+            </summary>
+        </member>
+        <member name="P:UserService.Request.Menu.UpdateMenuSortRequest.ParentId">
+            <summary>
+            父节ID
+            </summary>
+        </member>
+        <member name="T:UserService.Request.Menu.UpdateMenuStatusRequest">
+             <summary>
+            修改菜单状态
+             </summary>
+        </member>
+        <member name="P:UserService.Request.Menu.UpdateMenuStatusRequest.Id">
+            <summary>
+            菜单ID
+            </summary>
+        </member>
+        <member name="P:UserService.Request.Menu.UpdateMenuStatusRequest.Status">
+            <summary>
+            状态类型 -1 删除  0 启动 1 禁用
+            </summary>
+        </member>
+        <member name="T:UserService.Request.Role.AddRoleRequest">
+            <summary>
+            新增角色
+            
+            </summary>
+        </member>
+        <member name="P:UserService.Request.Role.AddRoleRequest.Name">
+            <summary>
+            名称
+            </summary>
+            
+        </member>
+        <member name="P:UserService.Request.Role.AddRoleRequest.RoleName">
+            <summary>
+            权限代码
+            </summary>
+        </member>
+        <member name="T:UserService.Request.Role.DeleteRoleRequest">
+            <summary>
+            删除角色
+            </summary>
+        </member>
+        <member name="P:UserService.Request.Role.DeleteRoleRequest.Id">
+            <summary>
+            角色ID
+            </summary>
+        </member>
+        <member name="T:UserService.Request.Role.EditRoleRequest">
+            <summary>
+            编辑角色
+            </summary>
+        </member>
+        <member name="P:UserService.Request.Role.EditRoleRequest.Id">
+            <summary>
+            角色 ID
+            </summary>
+        </member>
+        <member name="P:UserService.Request.Role.EditRoleRequest.Name">
+            <summary>
+            名称
+            </summary>
+            
+        </member>
+        <member name="P:UserService.Request.Role.EditRoleRequest.Status">
+            <summary>
+            状态
+            </summary>
+        </member>
+        <member name="P:UserService.Request.Role.EditRoleRequest.RoleName">
+            <summary>
+            权限代码
+            </summary>
+        </member>
+        <member name="T:UserService.Request.Role.GetRoleByIdRequest">
+            <summary>
+            角色
+            </summary>
+        </member>
+        <member name="P:UserService.Request.Role.GetRoleByIdRequest.Id">
+            <summary>
+            角色ID
+            </summary>
+        </member>
+        <member name="T:UserService.Request.Role.GetRoleListRequest">
+            <summary>
+            获取角色列表
+            </summary>
+        </member>
+        <member name="P:UserService.Request.Role.GetRoleListRequest.Page">
+            <summary>
+            当前页
+            </summary>
+        </member>
+        <member name="P:UserService.Request.Role.GetRoleListRequest.Rows">
+            <summary>
+            每页条数
+            </summary>
+        </member>
+        <member name="P:UserService.Request.Role.GetRoleListRequest.IsPage">
+            <summary>
+            是否分页 0 分页 1 不分页
+            </summary>
+        </member>
+        <member name="P:UserService.Request.Role.GetRoleListRequest.Seach">
+            <summary>
+            关键字
+            </summary>
+        </member>
+        <member name="P:UserService.Request.Role.GetRoleListRequest.SchoolId">
+            <summary>
+            学校ID，当角色非超级管理员时候必填
+            </summary>
+        </member>
+        <member name="T:UserService.Request.Role.UpdateRoleStatusRequest">
+            <summary>
+            删除角色
+            </summary>
+        </member>
+        <member name="P:UserService.Request.Role.UpdateRoleStatusRequest.Id">
+            <summary>
+            角色ID
+            </summary>
+        </member>
+        <member name="P:UserService.Request.Role.UpdateRoleStatusRequest.Status">
+            <summary>
+            状态类型 -1 删除  0 启动 1 禁用
+            </summary>
+        </member>
+        <member name="T:UserService.Request.Teacher.AddTeacherRequest">
+            <summary>
+            添加教师
+            </summary>
+        </member>
+        <member name="P:UserService.Request.Teacher.AddTeacherRequest.LoginName">
+            <summary>
+            登录名
+            </summary>
+        </member>
+        <member name="P:UserService.Request.Teacher.AddTeacherRequest.LoginPassword">
+            <summary>
+            登录密码
+            </summary>
+        </member>
+        <member name="P:UserService.Request.Teacher.AddTeacherRequest.Avatar">
+            <summary>
+            头像(FileId)
+            </summary>
+        </member>
+        <member name="P:UserService.Request.Teacher.AddTeacherRequest.SchoolId">
+            <summary>
+            学校ID 
+            </summary>
+        </member>
+        <member name="P:UserService.Request.Teacher.AddTeacherRequest.UserName">
+            <summary>
+            姓名
+            </summary>
+        </member>
+        <member name="P:UserService.Request.Teacher.AddTeacherRequest.Gender">
+            <summary>
+            性别
+            </summary>
+        </member>
+        <member name="P:UserService.Request.Teacher.AddTeacherRequest.Phone">
+            <summary>
+            手机号
+            </summary>
+        </member>
+        <member name="P:UserService.Request.Teacher.AddTeacherRequest.RoleId">
+            <summary>
+            角色ID
+            </summary>
+        </member>
+        <member name="P:UserService.Request.Teacher.AddTeacherRequest.SubjectId">
+            <summary>
+            学科老师
+            </summary>
+        </member>
+        <member name="P:UserService.Request.Teacher.AddTeacherRequest.ClassList">
+            <summary>
+            班级列表
+            </summary>
+        </member>
+        <member name="P:UserService.Request.Teacher.AddTeacherRequest.GreadeIdList">
+            <summary>
+            年级Id列表
+            </summary>
+        </member>
+        <member name="T:UserService.Request.Teacher.DeleteTeacherRequest">
+            <summary>
+            删除教师
+            </summary>
+        </member>
+        <member name="P:UserService.Request.Teacher.DeleteTeacherRequest.Id">
+            <summary>
+            用户ID
+            </summary>
+        </member>
+        <member name="T:UserService.Request.Teacher.EditTeacherRequest">
+            <summary>
+            编辑教师信息
+            </summary>
+        </member>
+        <member name="P:UserService.Request.Teacher.EditTeacherRequest.Id">
+            <summary>
+            Id
+            </summary>
+        </member>
+        <member name="P:UserService.Request.Teacher.EditTeacherRequest.LoginName">
+            <summary>
+            登录名
+            </summary>
+        </member>
+        <member name="P:UserService.Request.Teacher.EditTeacherRequest.LoginPassword">
+            <summary>
+            登录密码
+            </summary>
+        </member>
+        <member name="P:UserService.Request.Teacher.EditTeacherRequest.Avatar">
+            <summary>
+            头像
+            </summary>
+        </member>
+        <member name="P:UserService.Request.Teacher.EditTeacherRequest.UserName">
+            <summary>
+            姓名
+            </summary>
+        </member>
+        <member name="P:UserService.Request.Teacher.EditTeacherRequest.Gender">
+            <summary>
+            性别
+            </summary>
+        </member>
+        <member name="P:UserService.Request.Teacher.EditTeacherRequest.Phone">
+            <summary>
+            手机号
+            </summary>
+        </member>
+        <member name="P:UserService.Request.Teacher.EditTeacherRequest.SubjectId">
+            <summary>
+            学科老师
+            </summary>
+        </member>
+        <member name="P:UserService.Request.Teacher.EditTeacherRequest.ClassList">
+            <summary>
+            班级列表
+            </summary>
+        </member>
+        <member name="P:UserService.Request.Teacher.EditTeacherRequest.GreadeIdList">
+            <summary>
+            年级Id列表
+            </summary>
+        </member>
+        <member name="T:UserService.Request.Teacher.GetGetMenuTreeRequest">
+            <summary>
+            根据 ID获取教师信息
+            </summary>
+        </member>
+        <member name="P:UserService.Request.Teacher.GetGetMenuTreeRequest.Id">
+            <summary>
+            用户ID
+            </summary>
+        </member>
+        <member name="T:UserService.Request.Teacher.GetTeacherListByStuIdListRequest">
+            <summary>
+            根据学生ID获取教师集合
+            </summary>
+        </member>
+        <member name="P:UserService.Request.Teacher.GetTeacherListByStuIdListRequest.StudentIdList">
+            <summary>
+            学生ID集合
+            </summary>
+        </member>
+        <member name="T:UserService.Request.Teacher.GetTeacherListRequest">
+            <summary>
+            获取教师列表
+            </summary>
+        </member>
+        <!-- 对于成员“P:UserService.Request.Teacher.GetTeacherListRequest.Page”忽略有格式错误的 XML 注释 -->
+        <member name="P:UserService.Request.Teacher.GetTeacherListRequest.Rows">
+            <summary>
+            每页条数
+            </summary>
+        </member>
+        <member name="P:UserService.Request.Teacher.GetTeacherListRequest.IsPage">
+            <summary>
+            是否分页 0 分页 1 不分页
+            </summary>
+        </member>
+        <member name="P:UserService.Request.Teacher.GetTeacherListRequest.Seach">
+            <summary>
+            关键字
+            </summary>
+        </member>
+        <member name="P:UserService.Request.Teacher.GetTeacherListRequest.SchoolId">
+            <summary>
+            学校ID
+            </summary>
+        </member>
+        <member name="P:UserService.Request.Teacher.GetTeacherListRequest.IdList">
+            <summary>
+            教师IDList
+            </summary>
+        </member>
+        <member name="T:UserService.Request.UpdatePwdRequest">
+            <summary>
+            修改密码
+            </summary>
+        </member>
+        <member name="P:UserService.Request.UpdatePwdRequest.Id">
+            <summary>
+            用户ID
+            </summary>
+        </member>
+        <member name="P:UserService.Request.UpdatePwdRequest.LoginPwd">
+            <summary>
+            登录密码
+            </summary>
+        </member>
+        <member name="T:UserService.Request.User.AddUserRequest">
+            <summary>
+            添加用户
+            </summary>
+        </member>
+        <member name="P:UserService.Request.User.AddUserRequest.LoginName">
+            <summary>
+            登录名
+            </summary>
+        </member>
+        <member name="P:UserService.Request.User.AddUserRequest.LoginPassword">
+            <summary>
+            登录密码
+            </summary>
+        </member>
+        <member name="P:UserService.Request.User.AddUserRequest.Avatar">
+            <summary>
+            头像(FileID)
+            </summary>
+        </member>
+        <member name="P:UserService.Request.User.AddUserRequest.SchoolId">
+            <summary>
+            学校ID 
+            </summary>
+        </member>
+        <member name="P:UserService.Request.User.AddUserRequest.UserName">
+            <summary>
+            姓名
+            </summary>
+        </member>
+        <member name="P:UserService.Request.User.AddUserRequest.Gender">
+            <summary>
+            性别
+            </summary>
+        </member>
+        <member name="P:UserService.Request.User.AddUserRequest.Phone">
+            <summary>
+            手机号
+            </summary>
+        </member>
+        <member name="P:UserService.Request.User.AddUserRequest.RoleId">
+            <summary>
+            角色ID
+            </summary>
+        </member>
+        <member name="T:UserService.Request.User.BacthDeleteUserRequest">
+            <summary>
+            批量删除用户
+            </summary>
+        </member>
+        <member name="P:UserService.Request.User.BacthDeleteUserRequest.IdList">
+            <summary>
+            用户IDList
+            </summary>
+        </member>
+        <member name="T:UserService.Request.User.BacthEditUserStatusRequest">
+            <summary>
+            批量删除用户
+            </summary>
+        </member>
+        <member name="P:UserService.Request.User.BacthEditUserStatusRequest.IdList">
+            <summary>
+            用户IDList
+            </summary>
+        </member>
+        <member name="P:UserService.Request.User.BacthEditUserStatusRequest.Status">
+            <summary>
+            状态
+            </summary>
+        </member>
+        <member name="T:UserService.Request.User.DeleteUserRequest">
+            <summary>
+            删除用户
+            </summary>
+        </member>
+        <member name="P:UserService.Request.User.DeleteUserRequest.Id">
+            <summary>
+            用户ID
+            </summary>
+        </member>
+        <member name="T:UserService.Request.User.EditUserRequest">
+            <summary>
+            编辑用户
+            </summary>
+        </member>
+        <member name="P:UserService.Request.User.EditUserRequest.Id">
+            <summary>
+            Id
+            </summary>
+        </member>
+        <member name="P:UserService.Request.User.EditUserRequest.LoginName">
+            <summary>
+            登录名
+            </summary>
+        </member>
+        <member name="P:UserService.Request.User.EditUserRequest.Avatar">
+            <summary>
+            头像
+            </summary>
+        </member>
+        <member name="P:UserService.Request.User.EditUserRequest.SchoolId">
+            <summary>
+            学校ID 
+            </summary>
+        </member>
+        <member name="P:UserService.Request.User.EditUserRequest.UserName">
+            <summary>
+            姓名
+            </summary>
+        </member>
+        <member name="P:UserService.Request.User.EditUserRequest.Gender">
+            <summary>
+            性别
+            </summary>
+        </member>
+        <member name="P:UserService.Request.User.EditUserRequest.Phone">
+            <summary>
+            手机号
+            </summary>
+        </member>
+        <member name="P:UserService.Request.User.EditUserRequest.RoleId">
+            <summary>
+            角色ID
+            </summary>
+        </member>
+        <member name="T:UserService.Request.User.GetUserByIdRequest">
+            <summary>
+            根据ID获取用户信息
+            </summary>
+        </member>
+        <member name="P:UserService.Request.User.GetUserByIdRequest.Id">
+            <summary>
+            用户ID
+            </summary>
+        </member>
+        <member name="T:UserService.Request.User.GetUserListByIdRequest">
+            <summary>
+            根据ID获取用户信息
+            </summary>
+        </member>
+        <member name="P:UserService.Request.User.GetUserListByIdRequest.IdList">
+            <summary>
+            用户ID
+            </summary>
+        </member>
+        <member name="T:UserService.Request.User.GetUserListRequest">
+            <summary>
+            获取用户列表
+            </summary>
+        </member>
+        <!-- 对于成员“P:UserService.Request.User.GetUserListRequest.Page”忽略有格式错误的 XML 注释 -->
+        <member name="P:UserService.Request.User.GetUserListRequest.Rows">
+            <summary>
+            每页条数
+            </summary>
+        </member>
+        <member name="P:UserService.Request.User.GetUserListRequest.RoleId">
+            <summary>
+            权限
+            </summary>
+        </member>
+        <member name="P:UserService.Request.User.GetUserListRequest.Seach">
+            <summary>
+            关键字
+            </summary>
+        </member>
+        <member name="P:UserService.Request.User.GetUserListRequest.SchoolId">
+            <summary>
+            学校ID
+            </summary>
+        </member>
+        <member name="T:UserService.Result.ExportResult">
+            <summary>
+            导出
+            </summary>
+        </member>
+        <member name="P:UserService.Result.ExportResult.FileId">
+             <summary>
+            文件Id
+             </summary>
+        </member>
+        <member name="T:UserService.Result.GetSubjectListResult">
+            <summary>
+            学科列表
+            </summary>
+        </member>
+        <member name="T:UserService.Result.ImportResult">
+            <summary>
+            导入
+            </summary>
+        </member>
+        <member name="P:UserService.Result.ImportResult.Result">
+            <summary>
+            返回结果
+            </summary>
+        </member>
+        <member name="T:UserService.Result.LoginResult">
+            <summary>
+            用户登录
+            </summary>
+        </member>
+        <member name="P:UserService.Result.LoginResult.Data">
+            <summary>
+            返回信息
+            </summary>
+        </member>
+        <member name="P:UserService.Result.LoginResult.Success">
+            <summary>
+            是否成功
+            </summary>
+        </member>
+        <member name="T:UserService.Result.Menu.AddMenuResult">
+            <summary>
+            添加菜单
+            </summary>
+        </member>
+        <member name="P:UserService.Result.Menu.AddMenuResult.Id">
+            <summary>
+            Id
+            </summary>
+        </member>
+        <member name="T:UserService.Result.Menu.DeleteMenuResult">
+            <summary>
+            删除菜单
+            </summary>
+        </member>
+        <member name="P:UserService.Result.Menu.DeleteMenuResult.Result">
+            <summary>
+            返回结果
+            </summary>
+        </member>
+        <member name="T:UserService.Result.Menu.EditMenuResult">
+            <summary>
+            编辑菜单
+            </summary>
+        </member>
+        <member name="P:UserService.Result.Menu.EditMenuResult.Result">
+            <summary>
+            返回修改结果
+            </summary>
+        </member>
+        <member name="T:UserService.Result.Menu.GetMenuByIdResult">
+            <summary>
+            菜单信息
+            </summary>
+        </member>
+        <member name="P:UserService.Result.Menu.GetMenuByIdResult.Data">
+            <summary>
+            返回信息
+            </summary>
+        </member>
+        <member name="T:UserService.Result.Menu.GetMenuListResult">
+            <summary>
+            返回菜单列表
+            </summary>
+        </member>
+        <member name="T:UserService.Result.Menu.GetMenuTreeResult">
+            <summary>
+            返回菜单列表
+            </summary>
+        </member>
+        <member name="T:UserService.Result.Role.AddRoleResult">
+            <summary>
+            添加角色
+            </summary>
+        </member>
+        <member name="P:UserService.Result.Role.AddRoleResult.Id">
+            <summary>
+            Id
+            </summary>
+        </member>
+        <member name="T:UserService.Result.Role.DeleteRoleResult">
+            <summary>
+            删除角色
+            </summary>
+        </member>
+        <member name="P:UserService.Result.Role.DeleteRoleResult.Result">
+            <summary>
+            返回结果
+            </summary>
+        </member>
+        <member name="T:UserService.Result.Role.EditRoleResult">
+            <summary>
+            编辑角色
+            </summary>
+        </member>
+        <member name="P:UserService.Result.Role.EditRoleResult.Result">
+            <summary>
+            返回修改结果
+            </summary>
+        </member>
+        <member name="T:UserService.Result.Role.GetRoleByIdResult">
+            <summary>
+            角色信息
+            </summary>
+        </member>
+        <member name="P:UserService.Result.Role.GetRoleByIdResult.Data">
+            <summary>
+            返回信息
+            </summary>
+        </member>
+        <member name="T:UserService.Result.Role.GetRoleListResult">
+            <summary>
+            返回角色列表
+            </summary>
+        </member>
+        <member name="T:UserService.Result.Student.AddStudentResult">
+            <summary>
+            添加学生
+            </summary>
+        </member>
+        <member name="P:UserService.Result.Student.AddStudentResult.Id">
+            <summary>
+            Id
+            </summary>
+        </member>
+        <member name="T:UserService.Result.Student.DeleteStudentResult">
+            <summary>
+            删除
+            </summary>
+        </member>
+        <member name="P:UserService.Result.Student.DeleteStudentResult.Result">
+            <summary>
+            返回结果
+            </summary>
+        </member>
+        <member name="T:UserService.Result.Student.EditStudentResult">
+            <summary>
+            编辑学生
+            </summary>
+        </member>
+        <member name="P:UserService.Result.Student.EditStudentResult.Result">
+            <summary>
+            返回修改结果
+            </summary>
+        </member>
+        <member name="T:UserService.Result.Student.GetStudentByIdResult">
+            <summary>
+            学生信息
+            </summary>
+        </member>
+        <member name="P:UserService.Result.Student.GetStudentByIdResult.Data">
+            <summary>
+            返回信息
+            </summary>
+        </member>
+        <member name="T:UserService.Result.Student.GetStudentListResult">
+            <summary>
+            返回学生列表
+            </summary>
+        </member>
+        <member name="T:UserService.Result.Student.GetStudentTreeListResult">
+            <summary>
+            返回学生列表
+            </summary>
+        </member>
+        <member name="P:UserService.Result.Student.GetStudentTreeListResult.Data">
+            <summary>
+            数据列表
+            </summary>
+        </member>
+        <member name="T:UserService.Result.Student.StudentTree">
+            <summary>
+            学生信息
+            </summary>
+        </member>
+        <member name="P:UserService.Result.Student.StudentTree.Id">
+            <summary>
+            ID 
+            </summary>
+        </member>
+        <member name="P:UserService.Result.Student.StudentTree.Name">
+            <summary>
+            学生姓名
+            </summary>
+        </member>
+        <!-- 对于成员“P:UserService.Result.Student.StudentTree.Type”忽略有格式错误的 XML 注释 -->
+        <member name="P:UserService.Result.Student.StudentTree.SchoolId">
+            <summary>
+            学校ID
+            </summary>
+        </member>
+        <member name="P:UserService.Result.Student.StudentTree.GradeId">
+            <summary>
+            年级ID
+            </summary>
+        </member>
+        <member name="P:UserService.Result.Student.StudentTree.ClassId">
+            <summary>
+            班级ID
+            </summary>
+        </member>
+        <member name="T:UserService.Result.Teacher.AddTeacherResult">
+            <summary>
+            添加教师
+            </summary>
+        </member>
+        <member name="P:UserService.Result.Teacher.AddTeacherResult.Id">
+            <summary>
+            Id
+            </summary>
+        </member>
+        <member name="T:UserService.Result.Teacher.DeleteTeacherResult">
+            <summary>
+            删除教师
+            </summary>
+        </member>
+        <member name="P:UserService.Result.Teacher.DeleteTeacherResult.Result">
+            <summary>
+            返回结果
+            </summary>
+        </member>
+        <member name="T:UserService.Result.Teacher.EditTeacherResult">
+            <summary>
+            编辑教师
+            </summary>
+        </member>
+        <member name="P:UserService.Result.Teacher.EditTeacherResult.Result">
+            <summary>
+            返回信息
+            </summary>
+        </member>
+        <member name="T:UserService.Result.Teacher.GetTeacherByIdResult">
+            <summary>
+            教师信息
+            </summary>
+        </member>
+        <member name="P:UserService.Result.Teacher.GetTeacherByIdResult.Data">
+            <summary>
+            返回信息
+            </summary>
+        </member>
+        <member name="T:UserService.Result.Teacher.GetTeacherListByStuIdListResult">
+            <summary>
+            返回教师ID集合
+            </summary>
+        </member>
+        <member name="P:UserService.Result.Teacher.GetTeacherListByStuIdListResult.TeacherIdList">
+            <summary>
+            教师IDList
+            </summary>
+        </member>
+        <member name="T:UserService.Result.Teacher.GetTeacherListResult">
+            <summary>
+            返回教师列表
+            </summary>
+        </member>
+        <member name="T:UserService.Result.UpdatePwdResult">
+            <summary>
+            修改密码
+            </summary>
+        </member>
+        <member name="P:UserService.Result.UpdatePwdResult.Result">
+            <summary>
+            返回信息
+            </summary>
+        </member>
+        <member name="T:UserService.Result.User.AddUserResult">
+            <summary>
+            添加用户
+            </summary>
+        </member>
+        <member name="P:UserService.Result.User.AddUserResult.Id">
+            <summary>
+            Id
+            </summary>
+        </member>
+        <member name="T:UserService.Result.User.BatchDeleteUserResult">
+            <summary>
+            批量删除用户
+            </summary>
+        </member>
+        <member name="P:UserService.Result.User.BatchDeleteUserResult.Result">
+            <summary>
+            返回结果
+            </summary>
+        </member>
+        <member name="T:UserService.Result.User.DeleteUserResult">
+            <summary>
+            删除用户
+            </summary>
+        </member>
+        <member name="P:UserService.Result.User.DeleteUserResult.Result">
+            <summary>
+            返回结果
+            </summary>
+        </member>
+        <member name="T:UserService.Result.User.EditUserResult">
+            <summary>
+            修改用户
+            </summary>
+        </member>
+        <member name="P:UserService.Result.User.EditUserResult.Result">
+            <summary>
+            返回结果
+            </summary>
+        </member>
+        <member name="T:UserService.Result.User.GetUserByIdResult">
+            <summary>
+            根据ID获取用户信息
+            </summary>
+        </member>
+        <member name="P:UserService.Result.User.GetUserByIdResult.Data">
+            <summary>
+            返回信息
+            </summary>
+        </member>
+        <member name="T:UserService.Result.User.GetUserListByIdResult">
+            <summary>
+            根据ID获取用户信息
+            </summary>
+        </member>
+        <member name="T:UserService.Result.User.GetUserListResult">
+            <summary>
+            返回数据
+            </summary>
+        </member>
+        <member name="T:UserService.UserService">
+            <summary>
+            用户服务
+            </summary>
+        </member>
+        <member name="P:UserService.UserService.DataAdapter">
+            <summary>
+            数据库
+            </summary>
+        </member>
+        <member name="P:UserService.UserService.Configuration">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:UserService.UserService.HttpRequest">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:UserService.UserService.HttpResponse">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:UserService.UserService.ServiceCall">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:UserService.UserService.SCHOOL">
+            <summary>
+            学校服务
+            </summary>
+        </member>
+        <member name="F:UserService.UserService.GETGRADE">
+            <summary>
+            获取年级信息
+            </summary>
+        </member>
+        <member name="F:UserService.UserService.GETALLGRADE">
+            <summary>
+            获取年级信息
+            </summary>
+        </member>
+        <member name="F:UserService.UserService.GETCLASS">
+            <summary>
+            获取班级信息
+            </summary>
+        </member>
+        <member name="F:UserService.UserService.GETALLCLASS">
+            <summary>
+            获取全部班级信息
+            </summary>
+        </member>
+        <member name="F:UserService.UserService.GETCLASSINFO">
+            <summary>
+            根据获取年级信息
+            </summary>
+        </member>
+        <member name="F:UserService.UserService.GETGRADEINFO">
+            <summary>
+            根据ID获取班级信息
+            </summary>
+        </member>
+        <member name="F:UserService.UserService.GETCLASSBYIDLIST">
+            <summary>
+            根据获取班级列表
+            </summary>
+        </member>
+        <member name="F:UserService.UserService.GETGRADEBYIDLIST">
+            <summary>
+            根据ID获取年级列表
+            </summary>
+        </member>
+        <member name="F:UserService.UserService.GETCLASSNAME">
+            <summary>
+            根据获取班级名称
+            </summary>
+        </member>
+        <member name="F:UserService.UserService.GETGRADENAME">
+            <summary>
+            根据ID获取年级名称
+            </summary>
+        </member>
+        <member name="F:UserService.UserService.FILE">
+            <summary>
+            文件服务
+            </summary>
+        </member>
+        <member name="F:UserService.UserService.GETFILE">
+            <summary>
+            获取文件
+            </summary>
+        </member>
+        <member name="F:UserService.UserService.common">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:UserService.UserService.Dispose">
+            <summary>
+            释放
+            </summary>
+        </member>
+        <member name="M:UserService.UserService.AddUser(UserService.Request.User.AddUserRequest)">
+            <summary>
+            新增用户
+            </summary>
+            <param name="request"></param>
+            <returns></returns>
+        </member>
+        <member name="M:UserService.UserService.EditUser(UserService.Request.User.EditUserRequest)">
+            <summary>
+            编辑用户
+            </summary>
+            <param name="request"></param>
+            <returns></returns>
+        </member>
+        <member name="M:UserService.UserService.GetUserById(UserService.Request.User.GetUserByIdRequest)">
+            <summary>
+            根据 ID获取用户信息
+            </summary>
+            <param name="request"></param>
+            <returns></returns>
+        </member>
+        <member name="M:UserService.UserService.DelUser(UserService.Request.User.DeleteUserRequest)">
+            <summary>
+            删除用户
+            </summary>
+            <param name="request"></param>
+            <returns></returns>
+        </member>
+        <member name="M:UserService.UserService.BacthDeleteUser(UserService.Request.User.BacthDeleteUserRequest)">
+            <summary>
+            批量删除用户、学生、教师
+            </summary>
+            <param name="request"></param>
+            <returns></returns>
+        </member>
+        <member name="M:UserService.UserService.BacthEditUserStatus(UserService.Request.User.BacthEditUserStatusRequest)">
+            <summary>
+            批量删除用户、学生、教师
+            </summary>
+            <param name="request"></param>
+            <returns></returns>
+        </member>
+        <member name="M:UserService.UserService.UpdatePwd(UserService.Request.UpdatePwdRequest)">
+            <summary>
+            修改密码
+            </summary>
+            <param name="request"></param>
+            <returns></returns>
+        </member>
+        <member name="M:UserService.UserService.GetUserList(UserService.Request.User.GetUserListRequest)">
+            <summary>
+            查询用户
+            </summary>
+            <param name="request"></param>
+            <returns></returns>
+        </member>
+        <member name="M:UserService.UserService.GetUserListById(UserService.Request.User.GetUserListByIdRequest)">
+            <summary>
+            根据用户ID获取用户信息
+            </summary>
+            <param name="request"></param>
+            <returns></returns>
+        </member>
+        <member name="M:UserService.UserService.AddStudent(UserService.Request.Student.AddStudentRequest)">
+            <summary>
+            新增学生
+            </summary>
+            <param name="request"></param>
+            <returns></returns>
+        </member>
+        <member name="M:UserService.UserService.ExportStudent(UserService.Request.ExportRequest)">
+             <summary>
+            导出学生数据
+             </summary>
+             <param name="request"></param>
+             <returns></returns>
+        </member>
+        <member name="M:UserService.UserService.ImportStudent(UserService.Request.Student.ImportRequest)">
+            <summary>
+            导入学生数据
+            </summary>
+            <param name="request"></param>
+            <returns></returns>
+        </member>
+        <member name="M:UserService.UserService.EditStudent(UserService.Request.Student.EditStudentRequest)">
+            <summary>
+            编辑学生信息
+            </summary>
+            <param name="request"></param>
+            <returns></returns>
+        </member>
+        <member name="M:UserService.UserService.GetStudentById(UserService.Request.Student.GetStudentByIdRequest)">
+            <summary>
+            根据ID获取学生信息
+            </summary>
+            <param name="request"></param>
+            <returns></returns>
+        </member>
+        <member name="M:UserService.UserService.DelStudent(UserService.Request.Student.DeleteStudentRequest)">
+            <summary>
+            删除学生信息
+            </summary>
+            <param name="request"></param>
+            <returns></returns>
+        </member>
+        <member name="M:UserService.UserService.GetStudentList(UserService.Request.Student.GetStudentListRequest)">
+            <summary>
+            查询学生列表
+            </summary>
+            <param name="request"></param>
+            <returns></returns>
+        </member>
+        <member name="M:UserService.UserService.GetStudentTreeList(UserService.Request.Student.GetStudentTreeListRequest)">
+            <summary>
+            /获取学生列表Tree
+            </summary>
+            <param name="request"></param>
+            <returns></returns>
+        </member>
+        <member name="M:UserService.UserService.AddTeacher(UserService.Request.Teacher.AddTeacherRequest)">
+            <summary>
+            添加教师
+            </summary>
+            <param name="request"></param>
+            <returns></returns>
+        </member>
+        <member name="M:UserService.UserService.ImportTeacher(UserService.Request.Student.ImportRequest)">
+            <summary>
+            导入教师
+            </summary>
+            <param name="request"></param>
+            <returns></returns>
+        </member>
+        <member name="M:UserService.UserService.EditTeacher(UserService.Request.Teacher.EditTeacherRequest)">
+            <summary>
+            编辑教师信息
+            </summary>
+            <param name="request"></param>
+            <returns></returns>
+        </member>
+        <member name="M:UserService.UserService.GetTeacherById(UserService.Request.Teacher.GetGetMenuTreeRequest)">
+            <summary>
+            根据ID获取教师信息
+            </summary>
+            <param name="request"></param>
+            <returns></returns>
+        </member>
+        <member name="M:UserService.UserService.DelTeacher(UserService.Request.Teacher.DeleteTeacherRequest)">
+            <summary>
+            删除教师信息
+            </summary>
+            <param name="request"></param>
+            <returns></returns>
+        </member>
+        <member name="M:UserService.UserService.GetTeacherList(UserService.Request.Teacher.GetTeacherListRequest)">
+            <summary>
+            查询教师列表
+            </summary>
+            <param name="request"></param>
+            <returns></returns>
+        </member>
+        <member name="M:UserService.UserService.GetTeacherListByStuIdList(UserService.Request.Teacher.GetTeacherListByStuIdListRequest)">
+            <summary>
+            根据学生ID集合获取教师ID集合
+            </summary>
+            <param name="request"></param>
+            <returns></returns>
+        </member>
+        <member name="M:UserService.UserService.ExportTeacher(UserService.Request.ExportRequest)">
+            <summary>
+            导出教师信息
+            </summary>
+            <param name="request"></param>
+            <returns></returns>
+        </member>
+        <member name="M:UserService.UserService.GetSubjectList(UserService.Request.GetSubjectListRequest)">
+            <summary>
+            教师学科列表
+            </summary>
+            <param name="request"></param>
+            <returns></returns>
+        </member>
+        <member name="M:UserService.UserService.Login(UserService.Request.LoginRequest)">
+            <summary>
+            用户登录
+            </summary>
+            <param name="request"></param>
+            <returns></returns>
+        </member>
+        <member name="M:UserService.UserService.FileInfo(System.Byte[],System.String,System.String)">
+            <summary>
+            文件信息
+            </summary>
+            <param name="buf">二进制</param>
+            <param name="name">名称</param>
+            <param name="type">类型</param>
+            <returns></returns>
+        </member>
+        <member name="M:UserService.UserService.ContainChinese(System.String)">
+            <summary>
+            
+            </summary>
+            <param name="input"></param>
+            <returns></returns>
+        </member>
+        <member name="M:UserService.UserService.AddRole(UserService.Request.Role.AddRoleRequest)">
+            <summary>
+            新增角色
+            </summary>
+            <param name="request"></param>
+            <returns></returns>
+        </member>
+        <member name="M:UserService.UserService.EditRole(UserService.Request.Role.EditRoleRequest)">
+            <summary>
+            编辑角色
+            </summary>
+            <param name="request"></param>
+            <returns></returns>
+        </member>
+        <member name="M:UserService.UserService.GetRoleById(UserService.Request.Role.GetRoleByIdRequest)">
+            <summary>
+            根据ID获取角色信息
+            </summary>
+            <param name="request"></param>
+            <returns></returns>
+        </member>
+        <member name="M:UserService.UserService.DelRole(UserService.Request.Role.DeleteRoleRequest)">
+            <summary>
+            删除角色
+            </summary>
+            <param name="request"></param>
+            <returns></returns>
+        </member>
+        <member name="M:UserService.UserService.UpdateRoleStatus(UserService.Request.Role.UpdateRoleStatusRequest)">
+            <summary>
+            批量修改角色状态
+            </summary>
+            <param name="request"></param>
+            <returns></returns>
+        </member>
+        <member name="M:UserService.UserService.GetRoleList(UserService.Request.Role.GetRoleListRequest)">
+            <summary>
+            查询角色
+            </summary>
+            <param name="request"></param>
+            <returns></returns>
+        </member>
+        <member name="M:UserService.UserService.AddMenu(UserService.Request.Menu.AddMenuRequest)">
+            <summary>
+            新增菜单
+            </summary>
+            <param name="request"></param>
+            <returns></returns>
+        </member>
+        <member name="M:UserService.UserService.EditMenu(UserService.Request.Menu.EditMenuRequest)">
+            <summary>
+            编辑角色
+            </summary>
+            <param name="request"></param>
+            <returns></returns>
+        </member>
+        <member name="M:UserService.UserService.GetMenuById(UserService.Request.Role.GetRoleByIdRequest)">
+            <summary>
+            根据ID获取菜单信息
+            </summary>
+            <param name="request"></param>
+            <returns></returns>
+        </member>
+        <member name="M:UserService.UserService.DelMenu(UserService.Request.Role.DeleteRoleRequest)">
+            <summary>
+            删除菜单
+            </summary>
+            <param name="request"></param>
+            <returns></returns>
+        </member>
+        <member name="M:UserService.UserService.UpdateMenuStatus(UserService.Request.Menu.UpdateMenuStatusRequest)">
+            <summary>
+            批量修改菜单状态
+            </summary>
+            <param name="request"></param>
+            <returns></returns>
+        </member>
+        <member name="M:UserService.UserService.UpdateMenuSort(UserService.Request.Menu.UpdateMenuSortRequest)">
+            <summary>
+            调整排序
+            </summary>
+            <param name="request"></param>
+            <returns></returns>
+        </member>
+        <member name="M:UserService.UserService.GetMenuList(UserService.Request.Menu.GetMenuListRequest)">
+            <summary>
+            查询菜单列表
+            </summary>
+            <param name="request"></param>
+            <returns></returns>
+        </member>
+        <member name="M:UserService.UserService.GetMenuTree(UserService.Request.Menu.GetMenuTreeRequest)">
+            <summary>
+            查询菜单树
+            </summary>
+            <param name="request"></param>
+            <returns></returns>
+        </member>
+        <member name="M:UserService.UserService.GetMenuLeftTree(UserService.Request.Menu.GetMenuTreeByRoleRequest)">
+            <summary>
+            根据获取菜单
+            </summary>
+            <param name="request"></param>
+            <returns></returns>
+        </member>
+        <member name="M:UserService.UserService.GetMenuByRole(UserService.Request.Menu.GetMenuTreeByRoleRequest)">
+            <summary>
+            根据角色获取菜单
+            </summary>
+            <param name="request"></param>
+            <returns></returns>
+        </member>
+        <member name="M:UserService.UserService.CreateTree(System.Int32,System.Collections.Generic.List{UserService.DataModel.Menu})">
+            <summary>
+            递归树
+            </summary>
+            <param name="ParentId"></param>
+            <param name="dataList"></param>
+            <returns></returns>
+        </member>
+        <member name="M:UserService.UserService.CreateLeftTree(System.Int32,System.Collections.Generic.List{UserService.Models.MenuModel})">
+            <summary>
+            /
+            </summary>
+            <param name="ParentId"></param>
+            <param name="dataList"></param>
+            <returns></returns>
+        </member>
+        <member name="M:UserService.UserService.RoleEmpower(UserService.Request.Menu.RoleEmpowerRequest)">
+            <summary>
+            给角色分配权限
+            </summary>
+            <param name="request"></param>
+            <returns></returns>
+        </member>
+    </members>
+</doc>

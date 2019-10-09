@@ -1,0 +1,10 @@
+D:\YKWORK\zxx_kwdw\user\UserService\UserService\bin\Debug\netcoreapp2.2\UserService.deps.json
+D:\YKWORK\zxx_kwdw\user\UserService\UserService\bin\Debug\netcoreapp2.2\UserService.dll
+D:\YKWORK\zxx_kwdw\user\UserService\UserService\bin\Debug\netcoreapp2.2\UserService.pdb
+D:\YKWORK\zxx_kwdw\user\UserService\UserService\bin\Debug\netcoreapp2.2\UserService.xml
+D:\YKWORK\zxx_kwdw\user\UserService\UserService\obj\Debug\netcoreapp2.2\UserService.csproj.CoreCompileInputs.cache
+D:\YKWORK\zxx_kwdw\user\UserService\UserService\obj\Debug\netcoreapp2.2\UserService.AssemblyInfoInputs.cache
+D:\YKWORK\zxx_kwdw\user\UserService\UserService\obj\Debug\netcoreapp2.2\UserService.AssemblyInfo.cs
+D:\YKWORK\zxx_kwdw\user\UserService\UserService\obj\Debug\netcoreapp2.2\UserService.dll
+D:\YKWORK\zxx_kwdw\user\UserService\UserService\obj\Debug\netcoreapp2.2\UserService.pdb
+D:\YKWORK\zxx_kwdw\user\UserService\UserService\obj\Debug\netcoreapp2.2\UserService.csprojAssemblyReference.cache

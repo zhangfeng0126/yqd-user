@@ -1,0 +1,19 @@
+﻿using MicroService.Services;
+using System;
+using System.Collections.Generic;
+using System.Text;
+
+namespace UserService.Request.Role
+{
+    /// <summary>
+    /// 删除角色
+    /// </summary>
+    public class DeleteRoleRequest : IServiceRequest
+    {
+        /// <summary>
+        /// 角色ID
+        /// </summary>
+        [NotNull]
+        public List<int> Id { get; set; }
+    }
+}

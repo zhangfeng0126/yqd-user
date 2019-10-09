@@ -1,0 +1,20 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp2.2</TargetFramework>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+    <DocumentationFile>bin\Debug\netcoreapp2.1\UserService.xml</DocumentationFile>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="MicroService.Database" Version="1.0.1" />
+    <PackageReference Include="MicroService.Database.Interfaces" Version="1.0.1" />
+    <PackageReference Include="MicroService.Database.Mysql" Version="1.0.1" />
+    <PackageReference Include="MicroService.Services" Version="1.0.4" />
+    <PackageReference Include="Microsoft.Extensions.Configuration" Version="2.1.1" />
+    <PackageReference Include="NPOI.Core.Extension" Version="1.0.0" />
+  </ItemGroup>
+
+</Project>
